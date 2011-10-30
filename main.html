@@ -36,7 +36,7 @@
                         <span class="text">Procurar</span>
                     </div>
 
-                    <div class="nav_button" id="nav_object">
+                    <div class="nav_button selectable" id="nav_object">
                         <span class="icon"><img src="icon-object.png"/></span>
                         <span class="text">Objecto</span>
                     </div>
@@ -54,7 +54,7 @@
                         <span class="text">Alimentação</span>
                     </div>
 
-                    <div class="nav_button" id="nav_office">
+                    <div class="nav_button selectable" id="nav_office">
                         <span class="text">Escritório</span>
                     </div>
 
@@ -62,11 +62,34 @@
                         <span class="text">Limpeza</span>
                     </div>
 
+                    <!-- MISC -->
+                    <div class="nav_header">
+                        <span class="text">Notificações</span>
+                    </div>
+
+                    <div class="nav_button">
+                        <span class="text">2 novos objectos</span>
+                    </div>
+
+                    <div class="nav_button">
+                        <span class="text">1 artigo esgotado</span>
+                    </div>
+
+                    <div class="nav_button">
+                        <span class="text">2 artigos em fim de stock</span>
+                    </div>
+
                 </div>
 
 
                 <div id="body">
-                    <p>← Try hovering over the left-hand menu.</p>
+                    <p>← Try messing with the left-hand menu.</p>
+                    <ul>
+                        <li>All buttons react to hover
+                        (class <code>nav_button</code>)</li>
+                        <li>Only Procurar and Escritório react to click
+                        (class <code>selectable</code>)</li>
+                    </ul>
                 </div>
 
 

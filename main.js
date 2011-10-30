@@ -3,7 +3,7 @@ $(document).ready(function() {
         /**
          * Update header when selecting a menu item
          */
-        $(".nav_button").click(function(event) {
+        $(".nav_button.selectable").click(function(event) {
             $("#state_text").html($(this).find(".text").html());
 
             $(this).siblings().removeClass("selected");
