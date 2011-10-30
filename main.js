@@ -1,5 +1,7 @@
-/* Initial state */
-var state = "object";
+/* Globals */
+var canvas;
+var ctx;
+var state = "object"; /* Initial state */
 
 function updateState(newState) {
     state = newState;
@@ -39,9 +41,31 @@ function incrSearchActivate() {
 };
 
 
+function drawHouse() {
+
+    var img = new Image();
+    img.src = "house.png";
+    ctx.drawImage(img, 0, 0);
+
+    ctx.fillStyle = "rgba(200, 0, 0, 0.5)";
+    ctx.fillRect (9, 186, 15, 15);
+
+    ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+    ctx.fillRect (256, 274, 15, 15);
+
+};
+
+
 $(document).ready(function() {
 
         var timeout = null;
+
+        /* Canvas init */
+        canvas  = $("canvas").get(0);
+        ctx     = canvas.getContext("2d");
+        $("canvas").attr("width", "300").attr("height", "660");
+
+        drawHouse();
 
         updateState(state);
         incrSearchReset($("#incr_search"));

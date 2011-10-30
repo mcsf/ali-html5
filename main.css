@@ -138,3 +138,11 @@ body {
     top      : 8px;
     left     : -33px;
 }
+
+canvas {
+    position : absolute;
+    top      : 20px;
+    right    : 20px;
+    width    : 300px;
+    height   : 660px;
+}
