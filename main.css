@@ -133,3 +133,8 @@ body {
     left     : 44px;
 }
 
+#incr_search_clear {
+    position : relative;
+    top      : 8px;
+    left     : -33px;
+}
