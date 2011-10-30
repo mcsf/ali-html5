@@ -83,7 +83,7 @@ body {
     background-image : url('body.png');
 }
 
-#body > p, #body > div > p {
+#body > p, #body > div > p, #body > div > div {
     margin-left : 1em;
 }
 
@@ -145,4 +145,45 @@ canvas {
     right    : 6px;
     width    : 270px;
     height   : 660px;
+}
+
+#itemlist > .item {
+    position          : relative;
+    width             : 412px;
+    height            : 78px;
+    background-image  : url('object.png');
+    background-repeat : no-repeat;
+}
+
+#itemlist > .item > .icon {
+    position : absolute;
+    top      : 5px;
+    left     : 10px;
+    width    : 75px;
+    height   : 75px;
+}
+
+#itemlist > .item > .text {
+    position    : absolute;
+    width       : 337px;
+    height      : 75px;
+    top         : 5px;
+    left        : 76px;
+    margin-left : 3px;
+}
+
+#itemlist > .item .description {
+    position    : absolute;
+    width       : 337px;
+    height      : 37px;
+    font-weight : bold;
+    margin-top  : 6px;
+}
+
+#itemlist > .item .location {
+    position    : absolute;
+    top         : 38px;
+    width       : 337px;
+    height      : 37px;
+    font-style : italic;
 }
