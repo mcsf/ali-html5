@@ -49,10 +49,10 @@ function drawHouse() {
         ctx.drawImage(img, 0, 0);
 
         ctx.fillStyle = "rgba(200, 0, 0, 0.5)";
-        ctx.fillRect (9, 186, 15, 15);
+        ctx.fillRect (18, 167, 15, 15);
 
         ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
-        ctx.fillRect (256, 274, 15, 15);
+        ctx.fillRect (233, 249, 15, 15);
     };
 
 };
@@ -65,7 +65,7 @@ $(document).ready(function() {
         /* Canvas init */
         canvas  = $("canvas").get(0);
         ctx     = canvas.getContext("2d");
-        $("canvas").attr("width", "300").attr("height", "660");
+        $("canvas").attr("width", "270").attr("height", "660");
 
         drawHouse();
 
