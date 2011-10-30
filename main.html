@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="main.css" type="text/css" />
+        <script src="jquery-1.6.4.min.js"></script>
+        <script src="main.js"></script>
+
+        <title>ALI</title>
+    </head>
+
+    <body>
+
+        <!-- CONTORNO FÍSICO DO IPAD (desligado no CSS) -->
+        <div id="frame">
+            <img src="frame.png" border="0" usemap="#m_frame" />
+            <map id="m_frame">
+                <area shape="rect" coords="0,0,0,0" href="#" />
+            </map>
+        </div>
+
+        <div id="app">
+
+            <div id="tray"></div>
+
+            <div id="titles">
+                <div id="ali"></div>
+                <div id="state"><span id="state_text">Objecto</span></div>
+            </div>
+
+            <div id="nav_and_body">
+
+                <div id="nav">
+
+                    <!-- MENU PROCURAR -->
+                    <div class="nav_header">
+                        <span class="text">Procurar</span>
+                    </div>
+
+                    <div class="nav_button">
+                        <span class="icon"><img src="icon-object.png"/></span>
+                        <span class="text">Objecto</span>
+                    </div>
+
+                    <div class="nav_button">
+                        <span class="text">Categorias</span>
+                    </div>
+
+                    <!-- MENU STOCKS -->
+                    <div class="nav_header">
+                        <span class="text">Stocks</span>
+                    </div>
+
+                    <div class="nav_button">
+                        <span class="text">Alimentação</span>
+                    </div>
+
+                    <div class="nav_button">
+                        <span class="text">Escritório</span>
+                    </div>
+
+                    <div class="nav_button">
+                        <span class="text">Limpeza</span>
+                    </div>
+
+                </div>
+
+
+                <div id="body">
+                    <p>← Try hovering over the left-hand menu.</p>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
