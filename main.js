@@ -45,13 +45,15 @@ function drawHouse() {
 
     var img = new Image();
     img.src = "house.png";
-    ctx.drawImage(img, 0, 0);
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0);
 
-    ctx.fillStyle = "rgba(200, 0, 0, 0.5)";
-    ctx.fillRect (9, 186, 15, 15);
+        ctx.fillStyle = "rgba(200, 0, 0, 0.5)";
+        ctx.fillRect (9, 186, 15, 15);
 
-    ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
-    ctx.fillRect (256, 274, 15, 15);
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fillRect (256, 274, 15, 15);
+    };
 
 };
 
