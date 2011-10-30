@@ -108,9 +108,13 @@ body {
     background-image : url('nav-button.png');
 }
 
-.nav_button:hover {
-    background-image : url('nav-button-hi.png');
+.nav_button.selected {
+    background-image : url('nav-button-sel.png');
     color            : white;
+}
+
+.nav_button:hover:not(.selected) {
+    background-image : url('nav-button-hi.png');
 }
 
 .nav_button > .icon {
