@@ -83,8 +83,12 @@ body {
     background-image : url('body.png');
 }
 
-#body > p {
+#body > p, #body > div > p {
     margin-left : 1em;
+}
+
+#body > div {
+    display : none;
 }
 
 .nav_header {
