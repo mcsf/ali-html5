@@ -169,7 +169,7 @@ body {
     left     : 44px;
 }
 
-#incr_search_foobar {
+#incr_search {
     width     : 253px;
     height    : 38px;
     font-size : 16pt;
@@ -178,8 +178,10 @@ body {
 #incr_search_clear {
     cursor   : pointer;
     position : relative;
-    top      : 8px;
-    left     : -33px;
+    top      : 13px;
+    left     : -48px;
+    width    : 40px;
+    height   : 40px;
 }
 
 canvas {
@@ -189,6 +191,11 @@ canvas {
     right    : 6px;
     width    : 270px;
     height   : 660px;
+}
+
+#itemlist {
+    position : relative;
+    top      : 40px;
 }
 
 #itemlist > .item {
