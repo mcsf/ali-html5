@@ -60,6 +60,7 @@ body {
 }
 
 .state_icon {
+    cursor     : pointer;
     position   : absolute;
     text-align : center;
     width      : 43px;
@@ -135,6 +136,7 @@ body {
 }
 
 .nav_button {
+    cursor           : pointer;
     position         : relative;
     width            : 300px;
     height           : 44px;
@@ -174,12 +176,14 @@ body {
 }
 
 #incr_search_clear {
+    cursor   : pointer;
     position : relative;
     top      : 8px;
     left     : -33px;
 }
 
 canvas {
+    cursor   : pointer;
     position : absolute;
     top      : 20px;
     right    : 6px;
@@ -188,6 +192,7 @@ canvas {
 }
 
 #itemlist > .item {
+    cursor            : pointer;
     position          : relative;
     width             : 412px;
     height            : 78px;
