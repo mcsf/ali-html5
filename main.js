@@ -45,8 +45,10 @@ function incrSearchUpdate() {
 
     $("#itemlist > div").each(function () {
             if ($(this).find(".description").text().toLowerCase().match(input)) {
-                $(this).animate({ opacity: 1 }, 500);
-                $(this).show();
+                $(this)
+                    .animate({ opacity: 1 }, 500)
+                    .addClass("selectable")
+                    .show();
 
                 var roomNo = $(this).find(".roomNo").val();
                 delete inactiveRooms[roomNo];
@@ -63,13 +65,13 @@ function incrSearchUpdate() {
 };
 
 function incrSearchReset() {
-    var obj = $("#incr_search");
-    obj.val("Buscar...");
-    obj.css("color", "#D3D3D3");
+    $("#incr_search").val("Buscar...").css("color", "#D3D3D3");
 
     $("#itemlist > div").each(function() {
-        $(this).animate({ opacity: 0.2 }, 500);
-        $(this).show();
+        $(this)
+            .animate({ opacity: 0.2 }, 500)
+            .removeClass("selectable")
+            .show();
     });
 
     ctx.clearRect(0, 0, 270, 660);
@@ -78,8 +80,9 @@ function incrSearchReset() {
 
 function incrSearchActivate() {
     var obj = $("#incr_search");
-    obj.val("");
-    obj.css("color", $("body").css("color"));
+    if (obj.val() == "Buscar...") { // Ugly
+        obj.val("").css("color", $("body").css("color"));
+    }
 };
 
 
@@ -98,12 +101,14 @@ function fillRoom(params) {
     if (params.roomNo) room = rooms[roomNo];
     else if (params.roomValue) room = params.roomValue;
 
-    ctx.beginPath();
-    $.each(room, function(i,v) {
-        if (i == 0) ctx.moveTo(v[0], v[1]);
-        else        ctx.lineTo(v[0], v[1]);
-    });
-    ctx.fill();
+    if (room) {
+        ctx.beginPath();
+        $.each(room, function(i,v) {
+            if (i == 0) ctx.moveTo(v[0], v[1]);
+            else        ctx.lineTo(v[0], v[1]);
+        });
+        ctx.fill();
+    }
 };
 
 

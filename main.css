@@ -199,7 +199,6 @@ canvas {
 }
 
 #itemlist > .item {
-    cursor            : pointer;
     position          : relative;
     width             : 412px;
     height            : 78px;
@@ -238,4 +237,8 @@ canvas {
     width       : 337px;
     height      : 37px;
     font-style : italic;
+}
+
+.selectable {
+    cursor : pointer;
 }
