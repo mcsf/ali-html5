@@ -59,6 +59,35 @@ body {
     top: 8px;
 }
 
+.state_icon {
+    position   : absolute;
+    text-align : center;
+    width      : 43px;
+    height     : 43px;
+}
+
+#help {
+    right : 46px;
+}
+
+#logout {
+    right : 0px;
+}
+
+.state_icon > img {
+    position : relative;
+    top      : 2px;
+    width    : 26px;
+    height   : 26px;
+}
+
+.state_icon > p {
+    position    : relative;
+    top         : -14px;
+    font-size   : 10pt;
+    height      : 12px;
+}
+
 #nav_and_body {
     position : absolute;
     top      : 64px;
