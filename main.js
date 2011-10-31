@@ -20,12 +20,12 @@ var objects = [
     },
 ];
 
-var rooms = [
-    [ [2,129], [263,2], [263,223], [2,223] ],
-    [ [2,225], [154,225], [154,487], [2,487] ],
-    [ [157,225], [263,225], [263,350], [157,350] ],
-    [ [157,353], [263,353], [263,487], [157,487] ],
-];
+var rooms = {
+    0 : [ [2,129], [263,2], [263,223], [2,223] ],
+    1 : [ [2,225], [154,225], [154,487], [2,487] ],
+    2 : [ [157,225], [263,225], [263,350], [157,350] ],
+    3 : [ [157,353], [263,353], [263,487], [157,487] ],
+};
 
 
 function updateState(newState) {
@@ -38,7 +38,7 @@ function updateState(newState) {
 function incrSearchUpdate() {
     var input         = $("#incr_search").val().toLowerCase();
     var gray          = "rgba(211, 211, 211, 0.8)";
-    var inactiveRooms = rooms.slice(0);
+    var inactiveRooms = $.extend(true, {}, rooms);
 
     ctx.clearRect(0, 0, 270, 660);
     drawHouse();
@@ -49,7 +49,7 @@ function incrSearchUpdate() {
                 $(this).show();
 
                 var roomNo = $(this).find(".roomNo").val();
-                inactiveRooms.splice(roomNo, 1);
+                delete inactiveRooms[roomNo];
             }
             else {
                 $(this).hide();
