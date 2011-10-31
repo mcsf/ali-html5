@@ -127,10 +127,21 @@ body {
     left     : 9px;
 }
 
+.nav_button > .icon > img {
+    width  : 26px;
+    height : 26px;
+}
+
 .nav_button > .text {
     position : absolute;
     top      : 10px;
     left     : 44px;
+}
+
+#incr_search_foobar {
+    width     : 253px;
+    height    : 38px;
+    font-size : 16pt;
 }
 
 #incr_search_clear {
