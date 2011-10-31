@@ -131,6 +131,7 @@ $(document).ready(function() {
         });
 
         updateState(state);
+        $(".nav_button.selectable").first().addClass("selected");
         incrSearchReset($("#incr_search"));
 
         /**
