@@ -26,11 +26,11 @@
                 <div id="ali"></div>
 		<div id="state">
 		    <span id="state_text">Objecto</span>
-		    <span id="help" class="state_icon">
+		    <span id="help" class="state_icon selectable">
 			<img src="icon-help.svg"/>
 			<p>Ajuda</p>
 		    </span>
-		    <span id="logout" class="state_icon">
+		    <span id="logout" class="state_icon selectable">
 			<img src="icon-logout.svg"/>
 			<p>Sair</p>
 		    </span>
@@ -46,12 +46,12 @@
                         <span class="text">Procurar</span>
                     </div>
 
-                    <div class="nav_button selectable" id="nav_object">
+                    <div class="nav_button selectable enabled" id="nav_object">
                         <span class="icon"><img src="icon-search.svg"/></span>
                         <span class="text">Objecto</span>
                     </div>
 
-                    <div class="nav_button">
+                    <div class="nav_button selectable">
                         <span class="icon"><img src="icon-categories.svg"/></span>
                         <span class="text">Categorias</span>
                     </div>
@@ -61,17 +61,17 @@
                         <span class="text">Stocks</span>
                     </div>
 
-                    <div class="nav_button">
+                    <div class="nav_button selectable">
                         <span class="icon"><img src="icon-food.svg"/></span>
                         <span class="text">Alimentação</span>
                     </div>
 
-                    <div class="nav_button selectable" id="nav_office">
+                    <div class="nav_button selectable enabled" id="nav_office">
                         <span class="icon"><img src="icon-office.svg"/></span>
                         <span class="text">Escritório</span>
                     </div>
 
-                    <div class="nav_button">
+                    <div class="nav_button selectable">
                         <span class="icon"><img src="icon-cleanup.svg"/></span>
                         <span class="text">Limpeza</span>
                     </div>
@@ -81,35 +81,58 @@
                         <span class="text">Notificações</span>
                     </div>
 
-                    <div class="nav_button">
+                    <div class="nav_button selectable">
                         <span class="icon"><img src="icon-new.svg"/></span>
                         <span class="text">2 novos objectos</span>
                     </div>
 
-                    <div class="nav_button">
+                    <div class="nav_button selectable">
                         <span class="icon"><img src="icon-urgent.svg"/></span>
                         <span class="text">1 artigo esgotado</span>
                     </div>
 
-                    <div class="nav_button">
+                    <div class="nav_button selectable">
                         <span class="icon"><img src="icon-warning.svg"/></span>
                         <span class="text">2 artigos em fim de stock</span>
                     </div>
 
                 </div>
 
+                <div id="overlay_template">
+                    <img class="close selectable" src="close.png"/>
+                    <img class="picture" src="chaves_casa.png"/>
+                    <p class="description">
+                        Chaves da casa
+                    </p>
+                    <p class="location">
+                        <b>Localização</b>
+                        &nbsp;&nbsp;&nbsp;
+                        Secretária do quarto
+                    </p>
+                    <p class="categories">
+                        <b>Categorias</b>
+                        &nbsp;&nbsp;&nbsp;
+                        <span class="category selectable">Chaves</span>
+                    </p>
+                    <p class="info">
+                        Arrumado a 28 de Outubro.
+                    </p>
+                </div>
 
                 <div id="body">
 
+                    <div id="body_foo">
+                    </div>
+
                     <div id="body_object">
                         <p>
-                            <input type="text" id="incr_search" />
-                            <img id="incr_search_clear" src="erase.png" />
+                            <input type="text" id="incr_search" class="selectable" />
+                            <img id="incr_search_clear" class="selectable" src="erase.png" />
                         </p>
 
                         <div id="itemlist"></div>
 
-                        <canvas id="house"></canvas>
+                        <canvas id="house" class="selectable"></canvas>
 
                     </div>
 

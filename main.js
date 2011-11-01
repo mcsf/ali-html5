@@ -113,10 +113,28 @@ function fillRoom(params) {
 
 
 function createItem(attrs) {
-    var item = $('<div class="item"> <span class="icon"> <img src="' + attrs.icon + '"/> </span> <div class="text"> <span class="description">' + attrs.description + '</span> <span class="Location">' + attrs.location + '</span> <input type="hidden" class="roomNo" value="' + attrs.room + '"/> </div> </div>');
-    $("#itemlist").append(item);
+    $("#itemlist").append($('<div class="item selectable"> <span class="icon"> <img src="' + attrs.icon + '"/> </span> <div class="text"> <span class="description">' + attrs.description + '</span> <span class="Location">' + attrs.location + '</span> <input type="hidden" class="roomNo" value="' + attrs.room + '"/> </div> </div>'));
 };
 
+
+function enterOverlay(attrs) {
+    var o = $("#overlay_template").clone();
+
+    o.find(".description").append("hello");
+
+    o.appendTo("body").addClass("overlay").css("display", "inline");
+    o.find(".close").click(function() { exitOverlay(); });
+
+    $(".selectable").not("input").not("#state *").css("cursor", "auto");
+    $("input.selectable").attr("disabled", "true");
+    $(".overlay .selectable").css("cursor", "pointer");
+};
+
+function exitOverlay() {
+    $(".selectable").css("cursor", "pointer");
+    $("input.selectable").removeAttr("disabled");
+    $(".overlay").remove();
+};
 
 $(document).ready(function() {
 
@@ -136,13 +154,14 @@ $(document).ready(function() {
         });
 
         updateState(state);
-        $(".nav_button.selectable").first().addClass("selected");
+        $(".nav_button.selectable.enabled").first().addClass("selected");
         incrSearchReset($("#incr_search"));
 
         /**
          * Update header when selecting a menu item
          */
-        $(".nav_button.selectable").click(function() {
+        $(".nav_button.selectable.enabled").click(function() {
+            if ($(".overlay").length > 0) return;
             /* Decorate selected menu item */
             $(this).siblings().removeClass("selected");
             $(this).addClass("selected");
@@ -163,6 +182,24 @@ $(document).ready(function() {
             timeout = setTimeout(function(){ incrSearchUpdate(); }, 100);
         });
 
-        $("#incr_search").click(function() { incrSearchActivate(); });
-        $("#incr_search_clear").click(function() { incrSearchReset(); });
+        $("#incr_search").click(function() {
+            if ($(".overlay").length > 0) return;
+            incrSearchActivate();
+        });
+
+        $("#incr_search_clear").click(function() {
+            if ($(".overlay").length > 0) return;
+            incrSearchReset();
+        });
+
+        $("#itemlist > .item").click(function() {
+            if ($(this).css("cursor") != "pointer") return;
+                /*
+            createOverlay({
+                description : $(this).find(".description").text(),
+                location    : $(this).find(".location").text(),
+            });
+            */
+            enterOverlay();
+        });
 });

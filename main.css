@@ -60,7 +60,6 @@ body {
 }
 
 .state_icon {
-    cursor     : pointer;
     position   : absolute;
     text-align : center;
     width      : 43px;
@@ -136,7 +135,6 @@ body {
 }
 
 .nav_button {
-    cursor           : pointer;
     position         : relative;
     width            : 300px;
     height           : 44px;
@@ -176,7 +174,6 @@ body {
 }
 
 #incr_search_clear {
-    cursor   : pointer;
     position : relative;
     top      : 13px;
     left     : -48px;
@@ -185,7 +182,6 @@ body {
 }
 
 canvas {
-    cursor   : pointer;
     position : absolute;
     top      : 20px;
     right    : 6px;
@@ -239,6 +235,73 @@ canvas {
     font-style : italic;
 }
 
-.selectable {
+.selectable:not(input) {
     cursor : pointer;
+}
+
+#overlay_template {
+    display : none;
+}
+
+.overlay {
+    position      : fixed;
+    z-index       : 1;
+    top           : 150px;
+    left          : 342px;
+    width         : 640px;
+    height        : 400px;
+    background    : #0f0f0f;
+    opacity       : 0.85;
+    border-radius : 15px;
+    box-shadow    : 10px 10px 5px #999;
+}
+
+.overlay > *:not(.close) {
+    position : absolute;
+    left     : 311px;
+    color    : #999999;
+}
+
+.overlay > .close {
+    position : absolute;
+    top     : 8px;
+    right   : 8px;
+}
+
+.overlay > .picture {
+    border-radius : 15px;
+    top           : 38px;
+    left          : 51px;
+    width         : 236px;
+    height        : 230px;
+}
+
+.overlay > .description {
+    top         : 36px;
+    width       : 290px;
+    text-align  : center;
+    color       : #0571dc;
+    font-size   : 18pt;
+    font-weight : bold;
+}
+
+.overlay > .location {
+    top      : 128px;
+}
+
+.overlay > .categories {
+    top      : 190px;
+}
+
+.overlay .category {
+    background    : #0571dc;
+    color         : #0f0f0f;
+    font-weight   : bold;
+    border-radius : 5px;
+}
+
+.overlay > .info {
+    top        : 326px;
+    left       : 45px;
+    font-style : italic;
 }
