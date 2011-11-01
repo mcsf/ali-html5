@@ -1,22 +1,39 @@
-/* Globals */
+/**
+ * Globals
+ */
+
 var canvas;
 var ctx;
 var house;
 var state = "object"; /* Initial state */
 
 
+/**
+ * Static data:
+ * - objects
+ * - rooms
+ */
+
 var objects = [
     {
+        id          : 0,
         icon        : "chaves_casa_icon.png",
         description : "Chaves da casa",
         location    : "Secretária do quarto",
         room        : 0,
+        info        : "Arrumado a 23 de Outubro",
+        picture     : "chaves_casa.png",
+        categories  : "chaves",
     },
     {
+        id          : 1,
         icon        : "chaves_carro_icon.png",
         description : "Chaves do carro",
         location    : "Cómoda da despensa",
         room        : 2,
+        info        : "Arrumado a 10 de Outubro",
+        picture     : "chaves_carro.png",
+        categories  : "chaves",
     },
 ];
 
@@ -28,12 +45,23 @@ var rooms = {
 };
 
 
+/**
+ * State update
+ */
+
 function updateState(newState) {
     state = newState;
     $("#body > div").hide();
     $("#body_" + state).show();
 };
 
+
+/**
+ * Incremental search:
+ * - update
+ * - reset
+ * - activate
+ */
 
 function incrSearchUpdate() {
     var input         = $("#incr_search").val().toLowerCase();
@@ -86,6 +114,12 @@ function incrSearchActivate() {
 };
 
 
+/**
+ * Canvas manipulation
+ * - draw house
+ * - fill rooms
+ */
+
 function drawHouse() {
     ctx.drawImage(house, 0, 0);
     ctx.fillStyle = "rgba(200, 0, 0, 0.5)";
@@ -112,29 +146,46 @@ function fillRoom(params) {
 };
 
 
+/**
+ * Object list item creation
+ */
+
 function createItem(attrs) {
-    $("#itemlist").append($('<div class="item selectable"> <span class="icon"> <img src="' + attrs.icon + '"/> </span> <div class="text"> <span class="description">' + attrs.description + '</span> <span class="Location">' + attrs.location + '</span> <input type="hidden" class="roomNo" value="' + attrs.room + '"/> </div> </div>'));
+    $("#itemlist").append($('<div class="item selectable"> <span class="icon"> <img src="' + attrs.icon + '"/> </span> <div class="text"> <span class="description">' + attrs.description + '</span> <span class="Location">' + attrs.location + '</span> <input type="hidden" class="roomNo" value="' + attrs.room + '"/> <input type="hidden" class="id" value="' + attrs.id + '"/> </div> </div>'));
 };
 
 
-function enterOverlay(attrs) {
-    var o = $("#overlay_template").clone();
+/**
+ * Overlay creation and deletion
+ */
 
-    o.find(".description").append("hello");
+function createOverlay(id) {
+    var o = $("#overlay_template").clone();
+    var attrs = objects[id];
+
+    o.find(".picture").attr("src", attrs.picture);
+    o.find(".description").text(attrs.description);
+    o.find(".location").append(attrs.location);
+    o.find(".info").text(attrs.info);
 
     o.appendTo("body").addClass("overlay").css("display", "inline");
-    o.find(".close").click(function() { exitOverlay(); });
+    o.find(".close").click(function() { deleteOverlay(); });
 
     $(".selectable").not("input").not("#state *").css("cursor", "auto");
     $("input.selectable").attr("disabled", "true");
     $(".overlay .selectable").css("cursor", "pointer");
 };
 
-function exitOverlay() {
-    $(".selectable").css("cursor", "pointer");
+function deleteOverlay() {
+    $(".selectable").not("input").css("cursor", "pointer");
     $("input.selectable").removeAttr("disabled");
     $(".overlay").remove();
 };
+
+
+/**
+ * Main
+ */
 
 $(document).ready(function() {
 
@@ -194,12 +245,8 @@ $(document).ready(function() {
 
         $("#itemlist > .item").click(function() {
             if ($(this).css("cursor") != "pointer") return;
-                /*
-            createOverlay({
-                description : $(this).find(".description").text(),
-                location    : $(this).find(".location").text(),
-            });
-            */
-            enterOverlay();
+
+            var id = $(this).find(".id").val();
+            createOverlay(id);
         });
 });
