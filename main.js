@@ -240,6 +240,9 @@ function createOverlay(id) {
     /* Clicking on its close button deletes it */
     o.find(".close").click(function() { deleteOverlay(); });
 
+    /* Hitting "Escape" will do the same */
+    $(document).keydown(deleteOverlayOnEscape);
+
     /* Disable every clickable element that's not part of the new overlay */
     $(".selectable").not("input").not("#state *").css("cursor", "auto");
     $("input.selectable").attr("disabled", "true");
@@ -261,8 +264,12 @@ function deleteOverlay() {
     $("input.selectable").removeAttr("disabled");
     $(".overlay").remove();
     $("*").unbind('click', deleteOverlay);
+    $(document).unbind('keydown', deleteOverlayOnEscape);
 };
 
+function deleteOverlayOnEscape(event) {
+    if (event.which == 27) deleteOverlay();
+};
 
 /**
  * Main
