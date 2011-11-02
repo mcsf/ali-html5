@@ -1,11 +1,15 @@
 body {
-    border           : 1px solid black;
     position         : relative;
     width            : 1024px;
     height           : 768px;
     color            : #70777f;
-    background-color : #e2e3e8;
     font-family      : "Helvetica";
+}
+
+#bg {
+    width            : 1024px;
+    height           : 768px;
+    background-color : #e2e3e8;
 }
 
 #hidden, .template {
@@ -42,6 +46,7 @@ body {
     text-align : center;
     font-size  : 18pt;
     color      : #999999;
+    font-weight : bold;
 }
 
 #login > div {
@@ -63,6 +68,8 @@ body {
     display: inline;
     position: relative;
     top: -4px;
+    font-size: 15pt;
+    font-weight: bold;
 }
 
 #login > div input {
