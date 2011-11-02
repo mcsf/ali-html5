@@ -23,7 +23,7 @@ var objects = [
         room        : 0,
         info        : "Arrumado a 23 de Outubro",
         picture     : "chaves_casa.png",
-        categories  : "chaves",
+        categories  : [ "chaves" ],
     },
     {
         id          : 1,
@@ -33,67 +33,67 @@ var objects = [
         room        : 2,
         info        : "Arrumado a 10 de Outubro",
         picture     : "chaves_carro.png",
-        categories  : "chaves",
+        categories  : [ "chaves" ],
     },
     {
         id          : 2,
         icon        : "canivete-icon.png",
         description : "Canivete",
         location    : "Chão da sala",
-        room        : 3,
+        room        : 1,
         info        : "Arrumado a 9 de Outubro",
         picture     : "canivete.png",
-        categories  : "ferramentas",
+        categories  : [ "ferramentas", "campismo" ],
     },
     {
         id          : 3,
         icon        : "zarathustra-icon.png",
         description : "Nietzsche, Also Sprach Zarathustra",
         location    : "Chão da sala",
-        room        : 3,
+        room        : 1,
         info        : "Arrumado a 9 de Outubro",
         picture     : "zarathustra.png",
-        categories  : "livros",
+        categories  : [ "livros" ],
     },
     {
         id          : 4,
         icon        : "white-pixel.png",
         description : "Objecto não identificado",
         location    : "Chão da sala",
-        room        : 3,
+        room        : 1,
         info        : "Arrumado a 9 de Outubro",
         picture     : "white-pixel.png",
-        categories  : "livros",
+        categories  : [ "livros" ],
     },
     {
         id          : 5,
         icon        : "white-pixel.png",
         description : "Objecto não identificado",
         location    : "Chão da sala",
-        room        : 3,
+        room        : 1,
         info        : "Arrumado a 9 de Outubro",
         picture     : "white-pixel.png",
-        categories  : "livros",
+        categories  : [ "livros" ],
     },
     {
         id          : 6,
         icon        : "white-pixel.png",
         description : "Objecto não identificado",
         location    : "Chão da sala",
-        room        : 3,
+        room        : 1,
         info        : "Arrumado a 9 de Outubro",
         picture     : "white-pixel.png",
-        categories  : "livros",
+        categories  : [ "livros" ],
     },
     {
         id          : 7,
         icon        : "white-pixel.png",
         description : "Objecto não identificado",
         location    : "Chão da sala",
-        room        : 3,
+        room        : 1,
         info        : "Arrumado a 9 de Outubro",
         picture     : "white-pixel.png",
-        categories  : "livros",
+        categories  : [ "livros" ],
     },
 ];
 
@@ -228,6 +228,11 @@ function createOverlay(id) {
     o.find(".description").text(attrs.description);
     o.find(".location").append(attrs.location);
     o.find(".info").text(attrs.info);
+    $.each(attrs.categories, function(i,v) {
+        o.find(".categories").append(
+            '&nbsp;<span class="category selectable">'
+            + v + '</span>\n');
+    });
 
     /* Append it to page */
     o.appendTo("body").addClass("overlay").css("display", "inline");
