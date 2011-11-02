@@ -20,6 +20,7 @@ var objects = [
         icon        : "chaves_casa_icon.png",
         description : "Chaves da casa",
         location    : "Secretária do quarto",
+        coords      : [ 5, 167 ],
         room        : 0,
         info        : "Arrumado a 23 de Outubro",
         picture     : "chaves_casa.png",
@@ -30,6 +31,7 @@ var objects = [
         icon        : "chaves_carro_icon.png",
         description : "Chaves do carro",
         location    : "Cómoda da despensa",
+        coords      : [ 233, 249 ],
         room        : 2,
         info        : "Arrumado a 10 de Outubro",
         picture     : "chaves_carro.png",
@@ -39,7 +41,8 @@ var objects = [
         id          : 2,
         icon        : "canivete-icon.png",
         description : "Canivete",
-        location    : "Chão da sala",
+        location    : "Mesa da sala",
+        coords      : [ 28, 260 ],
         room        : 1,
         info        : "Arrumado a 9 de Outubro",
         picture     : "canivete.png",
@@ -50,6 +53,7 @@ var objects = [
         icon        : "zarathustra-icon.png",
         description : "Nietzsche, Also Sprach Zarathustra",
         location    : "Chão da sala",
+        coords      : [ 38, 365 ],
         room        : 1,
         info        : "Arrumado a 9 de Outubro",
         picture     : "zarathustra.png",
@@ -57,42 +61,13 @@ var objects = [
     },
     {
         id          : 4,
-        icon        : "white-pixel.png",
+        icon        : "question-icon.png",
         description : "Objecto não identificado",
         location    : "Chão da sala",
+        coords      : [ 15, 410 ],
         room        : 1,
         info        : "Arrumado a 9 de Outubro",
-        picture     : "white-pixel.png",
-        categories  : [ "livros" ],
-    },
-    {
-        id          : 5,
-        icon        : "white-pixel.png",
-        description : "Objecto não identificado",
-        location    : "Chão da sala",
-        room        : 1,
-        info        : "Arrumado a 9 de Outubro",
-        picture     : "white-pixel.png",
-        categories  : [ "livros" ],
-    },
-    {
-        id          : 6,
-        icon        : "white-pixel.png",
-        description : "Objecto não identificado",
-        location    : "Chão da sala",
-        room        : 1,
-        info        : "Arrumado a 9 de Outubro",
-        picture     : "white-pixel.png",
-        categories  : [ "livros" ],
-    },
-    {
-        id          : 7,
-        icon        : "white-pixel.png",
-        description : "Objecto não identificado",
-        location    : "Chão da sala",
-        room        : 1,
-        info        : "Arrumado a 9 de Outubro",
-        picture     : "white-pixel.png",
+        picture     : "question.png",
         categories  : [ "livros" ],
     },
 ];
@@ -130,6 +105,7 @@ function incrSearchUpdate() {
 
     ctx.clearRect(0, 0, 270, 660);
     drawHouse();
+    ctx.fillStyle = "rgba(200, 0, 0, 0.5)";
 
     $("#itemlist > div").each(function () {
             if ($(this).find(".description").text().toLowerCase().match(input)) {
@@ -138,8 +114,17 @@ function incrSearchUpdate() {
                     .addClass("selectable")
                     .show();
 
-                var roomNo = $(this).find(".roomNo").val();
+                var attrs = objects[$(this).find(".id").val()];
+
+                var roomNo = attrs.room;
                 delete inactiveRooms[roomNo];
+
+                if (!attrs.imgObj) {
+                    attrs.imgObj     = new Image();
+                    attrs.imgObj.src = attrs.icon;
+                }
+                ctx.drawImage(attrs.imgObj, attrs.coords[0], attrs.coords[1],
+                    45, 45);
             }
             else {
                 $(this).hide();
@@ -182,10 +167,6 @@ function incrSearchActivate() {
 
 function drawHouse() {
     ctx.drawImage(house, 0, 0);
-    ctx.fillStyle = "rgba(200, 0, 0, 0.5)";
-    ctx.fillRect (18, 167, 15, 15);
-    ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
-    ctx.fillRect (233, 249, 15, 15);
 };
 
 function fillRoom(params) {
@@ -286,7 +267,7 @@ $(document).ready(function() {
 
         house        = new Image();
         house.src    = "house.png";
-        house.onload = function() { drawHouse(); };
+        house.onload = drawHouse;
 
         $.each(objects, function(i,v) {
             createItem(v);
