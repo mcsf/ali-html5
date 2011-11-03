@@ -302,7 +302,7 @@ $(document).ready(function() {
             timeout = setTimeout(function(){ incrSearchUpdate(); }, 100);
         });
 
-        $("#incr_search").click(function() {
+        $("#incr_search").focus(function() {
             if ($(".overlay").length > 0) return;
             incrSearchActivate();
         });
