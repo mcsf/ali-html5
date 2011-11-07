@@ -115,6 +115,21 @@ function updateState(newState) {
 
 
 /**
+ * Utility function for incremental search
+ */
+
+function contains(obj, key) {
+    var found = false;
+    $.each(obj, function(k,v) {
+        if (key == k) {
+            found = true;
+            return;
+        }
+    });
+    return found;
+}
+
+/**
  * Incremental search:
  * - update
  * - reset
@@ -128,30 +143,32 @@ function incrSearchUpdate() {
 
     ctx.clearRect(0, 0, 270, 660);
     drawHouse();
-    ctx.fillStyle = "rgba(200, 0, 0, 0.5)";
 
     $("#itemlist > div").each(function () {
-            if ($(this).find(".description").text().toLowerCase().match(input)) {
-                $(this)
-                    .animate({ opacity: 1 }, 500)
-                    .addClass("selectable")
-                    .show();
+        var attrs = objects[$(this).find(".id").val()];
 
-                var attrs = objects[$(this).find(".id").val()];
+        if (attrs.description.toLowerCase().match(input)
+            && ($.isEmptyObject(labels)
+                || contains(labels, attrs.room))) {
 
-                var roomNo = attrs.room;
-                delete inactiveRooms[roomNo];
+            $(this)
+                .animate({ opacity: 1 }, 500)
+                .addClass("selectable")
+                .show();
 
-                if (!attrs.imgObj) {
-                    attrs.imgObj     = new Image();
-                    attrs.imgObj.src = attrs.icon;
-                }
-                ctx.drawImage(attrs.imgObj, attrs.coords[0], attrs.coords[1],
-                    45, 45);
+            var roomNo = attrs.room;
+            delete inactiveRooms[roomNo];
+
+            if (!attrs.imgObj) {
+                attrs.imgObj     = new Image();
+                attrs.imgObj.src = attrs.icon;
             }
-            else {
-                $(this).hide();
-            }
+            ctx.drawImage(attrs.imgObj, attrs.coords[0], attrs.coords[1],
+                45, 45);
+        }
+        else {
+            $(this).hide();
+        }
     });
 
     $.each(inactiveRooms, function(i,v) {
@@ -170,6 +187,10 @@ function incrSearchReset() {
             .show();
     });
 
+    $.each(labels, function(i,v) {
+        delete labels[i];
+    });
+    $("#labels").find("span").remove();
     ctx.clearRect(0, 0, 270, 660);
     drawHouse();
 };
@@ -235,16 +256,20 @@ function roomClickHandler(i) {
             '<span class="label" style="background-color:'
             + roomColors[i] + ';">' + roomNames[i]
             + '&nbsp;<a>&nbsp;X</a><input type="hidden" value="'
-            + i + '"/></span>&nbsp;'
+            + i + '"/></span>'
         );
 
         label.find("a").click(function() {
             var id = $(this).parent().find("input").val();
             delete labels[id];
             $(this).parent().remove();
+            incrSearchActivate();
+            incrSearchUpdate();
         });
 
         $("#labels").append(label);
+        incrSearchActivate();
+        incrSearchUpdate();
     }
 };
 
