@@ -80,6 +80,13 @@ var rooms = {
     3 : [ [157,353], [263,353], [263,487], [157,487] ],
 };
 
+var roomNames = {
+    0 : "Quarto",
+    1 : "Sala",
+    2 : "Despensa",
+    3 : "Cozinha",
+};
+
 
 /**
  * State update
