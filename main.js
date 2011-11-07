@@ -4,6 +4,7 @@
 
 var canvas;
 var ctx;
+var kinetic;
 var house;
 var state = "object"; /* Initial state */
 
@@ -186,6 +187,27 @@ function fillRoom(params) {
     }
 };
 
+function canvasEventListener() {
+    var context = kinetic.getContext();
+
+    $.each(rooms, function(i,room) {
+        kinetic.beginRegion();
+        context.beginPath();
+        $.each(room, function(i,v) {
+            if (i == 0) context.moveTo(v[0], v[1]);
+            else        context.lineTo(v[0], v[1]);
+        });
+        context.closePath();
+        kinetic.addRegionEventListener('mousedown', function() {
+            roomClickHandler(i);
+        });
+        kinetic.closeRegion();
+    });
+};
+
+function roomClickHandler(i) {
+    console.log("Room no. " + i);
+};
 
 /**
  * Object list item creation
@@ -263,6 +285,9 @@ $(document).ready(function() {
         /* Canvas init */
         canvas  = $("canvas").get(0);
         ctx     = canvas.getContext("2d");
+        kinetic = new Kinetic("house");
+        kinetic.setStage(canvasEventListener);
+
         $("canvas").attr("width", "270").attr("height", "660");
 
         house        = new Image();
