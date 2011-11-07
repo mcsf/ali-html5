@@ -6,6 +6,8 @@ var canvas;
 var ctx;
 var kinetic;
 var house;
+
+var labels = {}; /* Initial filters */
 var state = "object"; /* Initial state */
 
 
@@ -73,6 +75,12 @@ var objects = [
     },
 ];
 
+
+/**
+ * Very ugly.
+ * Put everything in a single object once there's time.
+ */
+
 var rooms = {
     0 : [ [2,129], [263,2], [263,223], [2,223] ],
     1 : [ [2,225], [154,225], [154,487], [2,487] ],
@@ -85,6 +93,13 @@ var roomNames = {
     1 : "Sala",
     2 : "Despensa",
     3 : "Cozinha",
+};
+
+var roomColors = {
+    0 : "#e6ea8c",
+    1 : "#8ceab1",
+    2 : "#c0ea8c",
+    3 : "#978cea",
 };
 
 
@@ -213,7 +228,24 @@ function canvasEventListener() {
 };
 
 function roomClickHandler(i) {
-    console.log("Room no. " + i);
+    if (!labels[i]) {
+        labels[i] = true;
+
+        var label = $(
+            '<span class="label" style="background-color:'
+            + roomColors[i] + ';">' + roomNames[i]
+            + '&nbsp;<a>&nbsp;X</a><input type="hidden" value="'
+            + i + '"/></span>&nbsp;'
+        );
+
+        label.find("a").click(function() {
+            var id = $(this).parent().find("input").val();
+            delete labels[id];
+            $(this).parent().remove();
+        });
+
+        $("#labels").append(label);
+    }
 };
 
 /**

@@ -317,3 +317,16 @@ canvas {
     left       : 45px;
     font-style : italic;
 }
+
+.label {
+    border-radius : 5px;
+    color         : #60666F;
+    font-weight   : bold;
+    margin-right  : 4px;
+    padding       : 2px;
+}
+
+.label > a {
+    cursor      : pointer;
+    border-left : 1px solid;
+}
