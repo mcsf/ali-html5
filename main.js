@@ -156,7 +156,7 @@ function contains(obj, key) {
 };
 
 /**
- * Incremental search:
+ * Incremental search for object list:
  * - update
  * - reset
  * - activate
@@ -223,6 +223,49 @@ function incrSearchReset() {
 
 function incrSearchActivate() {
     var obj = $("#incr_search");
+    if (obj.val() == "Buscar...") { // Ugly
+        obj.val("").css("color", $("body").css("color"));
+    }
+};
+
+
+/**
+ * Incremental search for stocks list:
+ * - update
+ * - reset
+ * - activate
+ */
+
+function stockSearchUpdate() {
+    var input = $("#stock_search").val().toLowerCase();
+
+    $("#stocklist > div").each(function () {
+        var attrs = stocks[$(this).find(".id").val()];
+
+        if (attrs.description.toLowerCase().match(input)) {
+            $(this)
+                .animate({ opacity: 1 }, 500)
+                .addClass("selectable")
+                .show();
+        }
+        else {
+            $(this).hide();
+        }
+    });
+};
+
+function stockSearchReset() {
+    $("#stock_search").val("Buscar...").css("color", "#D3D3D3");
+    $("#stocklist > div").each(function() {
+        $(this)
+            .animate({ opacity: 0.2 }, 500)
+            .removeClass("selectable")
+            .show();
+    });
+};
+
+function stockSearchActivate() {
+    var obj = $("#stock_search");
     if (obj.val() == "Buscar...") { // Ugly
         obj.val("").css("color", $("body").css("color"));
     }
@@ -468,4 +511,25 @@ $(document).ready(function() {
             var id = $(this).find(".id").val();
             createOverlay(id);
         });
+
+
+        /**
+         * Stocks > Incremental search
+         */
+
+        $("#stock_search").keydown(function() {
+            if (timeout) clearTimeout(timeout);
+            timeout = setTimeout(function(){ stockSearchUpdate(); }, 100);
+        });
+
+        $("#stock_search").focus(function() {
+            if ($(".overlay").length > 0) return;
+            stockSearchActivate();
+        });
+
+        $("#stock_search_clear").click(function() {
+            if ($(".overlay").length > 0) return;
+            stockSearchReset();
+        });
+
 });
