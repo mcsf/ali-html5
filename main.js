@@ -209,7 +209,6 @@ function incrSearchUpdate() {
 
             $(this)
                 .animate({ opacity: 1 }, 500)
-                .addClass("selectable")
                 .show();
 
             var roomNo = attrs.room;
@@ -239,7 +238,6 @@ function incrSearchReset() {
     $("#itemlist > div").each(function() {
         $(this)
             .animate({ opacity: 0.2 }, 500)
-            .removeClass("selectable")
             .show();
     });
 
