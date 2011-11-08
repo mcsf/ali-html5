@@ -475,7 +475,7 @@ function createStockOverlay(id) {
 
     /* Fill out overlay with contents */
     o.find(".picture").attr("src", attrs.picture);
-    o.find(".description").text(attrs.description);
+    o.find(".description").html(attrs.description);
     o.find(".units").append(renderUnits(attrs.units));
     $.each(attrs.categories, function(i,v) {
         o.find(".categories").append(
