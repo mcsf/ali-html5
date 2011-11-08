@@ -90,24 +90,15 @@ var roomColors = {
 };
 
 
-/**
- * Object list item creation
- */
-
+/* Object list item generation */
 function createItem(attrs) {
     $("#itemlist").append($('<div class="item selectable"> <span class="icon"> <img src="' + attrs.icon + '"/> </span> <div class="text"> <span class="description">' + attrs.description + '</span> <span class="Location">' + attrs.location + '</span> <input type="hidden" class="roomNo" value="' + attrs.room + '"/> <input type="hidden" class="id" value="' + attrs.id + '"/> </div> </div>').css("opacity", "0.2"));
 };
 
 
-/**
- * Overlay for Object
- */
-
-function createOverlay(id) {
-    var o = $("#overlay_template").clone();
+/* Filling function for overlay generation */
+function itemOverlayFill(o, id) {
     var attrs = objects[id];
-
-    /* Fill out overlay with contents */
     o.find(".picture").attr("src", attrs.picture);
     o.find(".description").text(attrs.description);
     o.find(".location").append(attrs.location);
@@ -117,28 +108,4 @@ function createOverlay(id) {
             '&nbsp;<span class="category selectable">'
             + v + '</span>\n');
     });
-
-    /* Append it to page */
-    o.appendTo("body").addClass("overlay").css("display", "inline");
-
-    /* Clicking on its close button deletes it */
-    o.find(".close").click(function() { deleteOverlay(); });
-
-    /* Hitting "Escape" will do the same */
-    $(document).keydown(deleteOverlayOnEscape);
-
-    /* Disable every clickable element that's not part of the new overlay */
-    $(".selectable").not("input").not("#state *").css("cursor", "auto");
-    $("input.selectable").attr("disabled", "true");
-    $(".overlay .selectable").css("cursor", "pointer");
-
-    /* Clicking outside overlay deletes it */
-    setTimeout(function(){
-        $("*").bind('click', deleteOverlay);
-        $(".overlay").add(".overlay *")
-            .unbind('click', deleteOverlay)
-            .click(function(event){
-                event.stopPropagation();
-            });
-    }, 100);
 };
