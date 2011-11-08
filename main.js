@@ -590,6 +590,10 @@ $(document).ready(function() {
             incrSearchReset();
         });
 
+        /**
+         * Procurar > Objecto > Overlay
+         */
+
         $("#itemlist > .item").click(function() {
             if ($(this).css("cursor") != "pointer") return;
 
@@ -616,6 +620,10 @@ $(document).ready(function() {
             if ($(".overlay").length > 0) return;
             stockSearchReset();
         });
+
+        /**
+         * Stocks > Escritório > Overlay
+         */
 
         $("#stocklist > .stock").click(function() {
             if ($(this).css("cursor") != "pointer") return;
