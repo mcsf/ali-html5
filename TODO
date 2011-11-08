@@ -1,0 +1,38 @@
+Login
+=====
+
++ Ajuda no login
+- Novo utiliz.: prompt username
+
+
+Tarefa 1
+========
+
++ Clique nos objs sombreados
+- Aproveitar http://slides.html5rocks.com/#new-form-types
+- Zoom no Overlay?
+
+
+Tarefa 2
+========
+
++ Implem. tarefa básica
+- Localizar obj. na planta ao clicar nele
+? Link para categorias?
+
+
+Tarefa 3
+========
+
++ Implem. tarefa básica
+- Ligar menu de Notificações a artigos em ruptura em Stocks
+
+
+A não esquecer no relatório
+==========================
+
+- Linguagem: login/logout, stocks
+- Scrolling: swipe-scroll é default no iPad
+
+
+vim: syn=diff
