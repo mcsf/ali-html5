@@ -196,7 +196,7 @@ canvas {
     position : absolute;
     width    : 425px;
     height   : 580px;
-    top      : 125px;
+    top      : 124px;
     overflow-x : hidden;
     overflow-y : auto;
 }
@@ -390,7 +390,7 @@ button {
     left     : -1em;
     width    : 723px;
     height   : 580px;
-    top      : 125px;
+    top      : 124px;
     overflow-x : hidden;
     overflow-y : auto;
 }
