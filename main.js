@@ -112,19 +112,25 @@ var stocks = [
         id          : 0,
         description : "Cartucho de tinta preta para impressora",
         units       : 0,
+        picture     : "question.png",
         icon        : "question-icon.png",
+        categories  : [ "escritório" ],
     },
     {
         id          : 1,
         description : "Caixa 200 Post-Its",
         units       : 2,
+        picture     : "question.png",
         icon        : "question-icon.png",
+        categories  : [ "escritório" ],
     },
     {
         id          : 2,
         description : "Caixa 100 Agrafos",
         units       : 10,
+        picture     : "question.png",
         icon        : "question-icon.png",
+        categories  : [ "escritório" ],
     },
 ];
 
@@ -377,7 +383,7 @@ function renderUnits(n) {
 
 
 /**
- * Overlay creation and deletion
+ * Overlay for Object
  */
 
 function createOverlay(id) {
@@ -430,6 +436,62 @@ function deleteOverlay() {
 
 function deleteOverlayOnEscape(event) {
     if (event.which == 27) deleteOverlay();
+};
+
+
+/**
+ * Overlay for Stocks
+ */
+
+function createStockOverlay(id) {
+    var o = $("#stock_overlay_template").clone();
+    var attrs = stocks[id];
+
+    /* Fill out overlay with contents */
+    o.find(".picture").attr("src", attrs.picture);
+    o.find(".description").text(attrs.description);
+    o.find(".units").append(renderUnits(attrs.units));
+    $.each(attrs.categories, function(i,v) {
+        o.find(".categories").append(
+            '&nbsp;<span class="category selectable">'
+            + v + '</span>\n');
+    });
+
+    /* Append it to page */
+    o.appendTo("body").addClass("overlay").css("display", "inline");
+
+    /* Clicking on its close button deletes it */
+    o.find(".close").click(function() { deleteStockOverlay(); });
+
+    /* Hitting "Escape" will do the same */
+    $(document).keydown(deleteStockOverlayOnEscape);
+
+    /* Disable every clickable element that's not part of the new overlay */
+    $(".selectable").not("input").not("#state *").css("cursor", "auto");
+    $("input.selectable").attr("disabled", "true");
+    $(".overlay .selectable").css("cursor", "pointer");
+
+    /* Clicking outside overlay deletes it */
+    setTimeout(function(){
+        $("*").bind('click', deleteStockOverlay);
+        $(".overlay").add(".overlay *")
+            .unbind('click', deleteStockOverlay)
+            .click(function(event){
+                event.stopPropagation();
+            });
+    }, 100);
+};
+
+function deleteStockOverlay() {
+    $(".selectable").not("input").css("cursor", "pointer");
+    $("input.selectable").removeAttr("disabled");
+    $(".overlay").remove();
+    $("*").unbind('click', deleteStockOverlay);
+    $(document).unbind('keydown', deleteStockOverlayOnEscape);
+};
+
+function deleteStockOverlayOnEscape(event) {
+    if (event.which == 27) deleteStockOverlay();
 };
 
 /**
@@ -527,4 +589,10 @@ $(document).ready(function() {
             stockSearchReset();
         });
 
+        $("#stocklist > .stock").click(function() {
+            if ($(this).css("cursor") != "pointer") return;
+
+            var id = $(this).find(".id").val();
+            createStockOverlay(id);
+        });
 });
