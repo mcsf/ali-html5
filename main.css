@@ -281,6 +281,7 @@ canvas {
 }
 
 .overlay > .picture {
+    background    : white;
     border-radius : 15px;
     top           : 38px;
     left          : 51px;
@@ -440,5 +441,14 @@ button {
     color : #880;
 }
 
-#stocklist :nth-child(odd)  { background: #d9dbe1 }
-#stocklist :nth-child(even) { background: #e8e9ed }
+#stocklist :nth-child(odd) {
+    background: #d9dbe1;
+}
+
+#stocklist :nth-child(even) {
+    background: #e8e9ed;
+}
+
+#stocklist .stock:hover {
+    background: #c5c7cc;
+}

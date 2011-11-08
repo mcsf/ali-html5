@@ -110,26 +110,50 @@ var roomColors = {
 var stocks = [
     {
         id          : 0,
-        description : "Cartucho de tinta preta para impressora",
-        units       : 0,
-        picture     : "question.png",
-        icon        : "question-icon.png",
+        description : "Agrafos (caixa de 100)",
+        units       : 4,
+        picture     : "staples.png",
+        icon        : "staples-icon.png",
         categories  : [ "escritório" ],
     },
     {
         id          : 1,
-        description : "Caixa 200 Post-Its",
-        units       : 2,
-        picture     : "question.png",
-        icon        : "question-icon.png",
+        description : "CDs graváveis",
+        units       : 0,
+        picture     : "cd.png",
+        icon        : "cd-icon.png",
         categories  : [ "escritório" ],
     },
     {
         id          : 2,
-        description : "Caixa 100 Agrafos",
+        description : "Cargas de tinta para caneta",
+        units       : 3,
+        picture     : "pen-ink.png",
+        icon        : "pen-ink-icon.png",
+        categories  : [ "escritório" ],
+    },
+    {
+        id          : 3,
+        description : "Papel para impressora (maço de 50)",
+        units       : 7,
+        picture     : "paper.png",
+        icon        : "paper-icon.png",
+        categories  : [ "escritório" ],
+    },
+    {
+        id          : 4,
+        description : "Post-It &reg; (caixa de 200)",
+        units       : 2,
+        picture     : "post-it.png",
+        icon        : "post-it-icon.png",
+        categories  : [ "escritório" ],
+    },
+    {
+        id          : 5,
+        description : "Tinteiro para impressora",
         units       : 10,
-        picture     : "question.png",
-        icon        : "question-icon.png",
+        picture     : "cartridge.png",
+        icon        : "cartridge-icon.png",
         categories  : [ "escritório" ],
     },
 ];
@@ -368,7 +392,7 @@ function renderUnits(n) {
 
     /* Additional classes */
     if (n == 0) s += "urgent ";
-    else if (n < 3) s += "warning ";
+    else if (n < 4) s += "warning ";
 
     s += '">';
 
