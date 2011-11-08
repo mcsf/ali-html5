@@ -356,8 +356,12 @@ function roomClickHandler(i) {
             var id = $(this).parent().find("input").val();
             delete labels[id];
             $(this).parent().remove();
-            incrSearchActivate();
-            incrSearchUpdate();
+            if ($.isEmptyObject(labels))
+                incrSearchReset();
+            else {
+                incrSearchActivate();
+                incrSearchUpdate();
+            }
         });
 
         $("#labels").append(label);
