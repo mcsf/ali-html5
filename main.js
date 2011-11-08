@@ -112,16 +112,19 @@ var stocks = [
         id          : 0,
         description : "Cartucho de tinta preta para impressora",
         units       : 0,
+        icon        : "question-icon.png",
     },
     {
         id          : 1,
         description : "Caixa 200 Post-Its",
         units       : 2,
+        icon        : "question-icon.png",
     },
     {
         id          : 2,
         description : "Caixa 100 Agrafos",
         units       : 10,
+        icon        : "question-icon.png",
     },
 ];
 
@@ -310,10 +313,29 @@ function createItem(attrs) {
  */
 
 function createStockItem(attrs) {
-    $("#stocklist").append($(
-        '<div><b>' + attrs.description + '</b> <i>('
-        + attrs.units + ')</i><input type="hidden" value="'
-        + attrs.id + '"/></li>'));
+    $("#stocklist").append($('<div class="stock"> <img src="' + attrs.icon + '"/> <span class="description">' + attrs.description + '</span>' + renderUnits(attrs.units) + '<input type="hidden" class="id" value="' + attrs.id + '"/></div>'));
+};
+
+/**
+ * Helper function for stocks list creation
+ */
+
+function renderUnits(n) {
+    var s = '<span class="units ';
+
+    /* Additional classes */
+    if (n == 0) s += "urgent ";
+    else if (n < 3) s += "warning ";
+
+    s += '">';
+
+    /* Text */
+    if (n == 0) s += "Esgotado";
+    else s += "Em stock: " + n + " uds.";
+
+    s += '</span>';
+
+    return s;
 };
 
 
@@ -397,11 +419,9 @@ $(document).ready(function() {
             createItem(v);
         });
 
-        /*
         $.each(stocks, function(i,v) {
             createStockItem(v);
         });
-        */
 
         updateState(state);
         $(".nav_button.selectable.enabled").first().addClass("selected");
