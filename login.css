@@ -91,18 +91,33 @@ body {
     cursor : pointer;
 }
 
-#prefs {
+#prefs,
+#help {
     cursor      : pointer;
     position    : absolute;
-    right       : 20px;
     bottom      : 3px;
-    width       : 106px;
+    width       : auto;
     height      : 64px;
     color       : #333333;
     text-align  : center;
 }
 
-#prefs > p {
+#prefs {
+    right       : 85px;
+}
+
+#help {
+    right       : 15px;
+}
+
+#prefs > p,
+#help  > p {
     position    : relative;
     top         : -16px;
+}
+
+#prefs > img,
+#help  > img {
+    width  : 43px;
+    height : 43px;
 }
