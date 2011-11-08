@@ -1,38 +1,44 @@
-Login
-=====
+--- Prefixos:
+--- "-" feito
+--- "+" por fazer
+--- "@" a considerar se vale a pena fazer
+--- "↓" importância baixa
+--- "↑" importância alta
+--- "#" comentários
 
-+ Ajuda no login
+========================================================================
+
+--- Documentação
+- ↑ Template para janelas de ajuda (overlay?)
+- ↑ Documentar tarefas, ecrãs
+
+--- Login
 - Novo utiliz.: prompt username
 
+--- Procura String
+# Consultar http://slides.html5rocks.com/#new-form-types
+@ Zoom no Overlay?
 
-Tarefa 1
-========
-
-+ Clique nos objs sombreados
-- Aproveitar http://slides.html5rocks.com/#new-form-types
-- Zoom no Overlay?
-
-
-Tarefa 2
-========
-
-+ Implem. tarefa básica
+--- Procura Mapa
+- ↑ Fix: quando se retira todas as labels e há texto na barra
 - Localizar obj. na planta ao clicar nele
-? Link para categorias?
+@ Clicar nos ícones do mapa para seleccionar objs (difícil)
 
-
-Tarefa 3
-========
-
-+ Implem. tarefa básica
+--- Stocks
+- Ver localizações
 - Ligar menu de Notificações a artigos em ruptura em Stocks
 
+--- Novas Tarefas
+- Ver todos os artigos de stock que o ALI não permite que esgotem
 
-A não esquecer no relatório
-==========================
+--- Extras
+@ Remover dummy tray se o browser for de iPad/iOS
 
+========================================================================
+
+--- A não esquecer no relatório
 - Linguagem: login/logout, stocks
 - Scrolling: swipe-scroll é default no iPad
 
 
-vim: syn=diff
+vim: syn=diff tw=72
