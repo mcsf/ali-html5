@@ -104,6 +104,29 @@ var roomColors = {
 
 
 /**
+ * Stocks
+ */
+
+var stocks = [
+    {
+        id          : 0,
+        description : "Cartucho de tinta preta para impressora",
+        units       : 0,
+    },
+    {
+        id          : 1,
+        description : "Caixa 200 Post-Its",
+        units       : 2,
+    },
+    {
+        id          : 2,
+        description : "Caixa 100 Agrafos",
+        units       : 10,
+    },
+];
+
+
+/**
  * State update
  */
 
@@ -127,7 +150,7 @@ function contains(obj, key) {
         }
     });
     return found;
-}
+};
 
 /**
  * Incremental search:
@@ -283,6 +306,18 @@ function createItem(attrs) {
 
 
 /**
+ * Stocks list creation
+ */
+
+function createStockItem(attrs) {
+    $("#stocklist").append($(
+        '<div><b>' + attrs.description + '</b> <i>('
+        + attrs.units + ')</i><input type="hidden" value="'
+        + attrs.id + '"/></li>'));
+};
+
+
+/**
  * Overlay creation and deletion
  */
 
@@ -361,6 +396,12 @@ $(document).ready(function() {
         $.each(objects, function(i,v) {
             createItem(v);
         });
+
+        /*
+        $.each(stocks, function(i,v) {
+            createStockItem(v);
+        });
+        */
 
         updateState(state);
         $(".nav_button.selectable.enabled").first().addClass("selected");

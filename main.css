@@ -170,13 +170,13 @@ body {
     left     : 44px;
 }
 
-#incr_search {
+#incr_search, #stock_search {
     width     : 253px;
     height    : 38px;
     font-size : 16pt;
 }
 
-#incr_search_clear {
+#incr_search_clear, #stock_search_clear {
     position : relative;
     top      : 13px;
     left     : -48px;
@@ -330,3 +330,54 @@ canvas {
     cursor      : pointer;
     border-left : 1px solid;
 }
+
+#stocklist {
+    position : absolute;
+    left     : -1em;
+    width    : 723px;
+    height   : 580px;
+    top      : 125px;
+    overflow-x : hidden;
+    overflow-y : auto;
+}
+
+#stocklist :last-child:not(span) {
+    border-bottom : 1px solid #999;
+}
+
+#stocklist > .stock {
+    position   : relative;
+    width      : 100%;
+    height     : 40px;
+    border-top : 1px solid #999;
+}
+
+#stocklist > .stock > img {
+    position      : relative;
+    width         : 37px;
+    height        : 34px;
+    top           : 3px;
+    left          : 3px;
+    background    : white;
+    border-radius : 10px;
+}
+
+#stocklist > .stock > span {
+    position   : absolute;
+    background : inherit;
+}
+
+#stocklist > .stock > .description {
+    top  : 10px;
+    left : 46px;
+    font-weight : bold;
+}
+
+#stocklist > .stock > .units {
+    top  : 10px;
+    right : 3px;
+    font-style : italic;
+}
+
+#stocklist :nth-child(odd)  { background: #d9dbe1 }
+#stocklist :nth-child(even) { background: #e8e9ed }
