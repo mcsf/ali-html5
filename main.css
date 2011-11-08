@@ -193,10 +193,10 @@ canvas {
 }
 
 #itemlist {
-    position : relative;
+    position : absolute;
     width    : 425px;
     height   : 580px;
-    top      : 40px;
+    top      : 125px;
     overflow-x : hidden;
     overflow-y : auto;
 }
