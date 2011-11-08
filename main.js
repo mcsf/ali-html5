@@ -243,10 +243,7 @@ function stockSearchUpdate() {
         var attrs = stocks[$(this).find(".id").val()];
 
         if (attrs.description.toLowerCase().match(input)) {
-            $(this)
-                .animate({ opacity: 1 }, 500)
-                .addClass("selectable")
-                .show();
+            $(this).show();
         }
         else {
             $(this).hide();
@@ -257,10 +254,7 @@ function stockSearchUpdate() {
 function stockSearchReset() {
     $("#stock_search").val("Buscar...").css("color", "#D3D3D3");
     $("#stocklist > div").each(function() {
-        $(this)
-            .animate({ opacity: 0.2 }, 500)
-            .removeClass("selectable")
-            .show();
+        $(this).show();
     });
 };
 
@@ -356,7 +350,7 @@ function createItem(attrs) {
  */
 
 function createStockItem(attrs) {
-    $("#stocklist").append($('<div class="stock"> <img src="' + attrs.icon + '"/> <span class="description">' + attrs.description + '</span>' + renderUnits(attrs.units) + '<input type="hidden" class="id" value="' + attrs.id + '"/></div>'));
+    $("#stocklist").append($('<div class="stock selectable"> <img src="' + attrs.icon + '"/> <span class="description">' + attrs.description + '</span>' + renderUnits(attrs.units) + '<input type="hidden" class="id" value="' + attrs.id + '"/></div>'));
 };
 
 /**
@@ -468,7 +462,8 @@ $(document).ready(function() {
 
         updateState(state);
         $(".nav_button.selectable.enabled").first().addClass("selected");
-        incrSearchReset($("#incr_search"));
+        incrSearchReset();
+        stockSearchReset();
 
         /**
          * Update header when selecting a menu item
