@@ -17,7 +17,7 @@ var stocks = [
         units       : 0,
         picture     : "cd.png",
         icon        : "cd-icon.png",
-        categories  : [ "escritório" ],
+        categories  : [ "escritório", "digital" ],
     },
     {
         id          : 2,
@@ -33,7 +33,7 @@ var stocks = [
         units       : 7,
         picture     : "paper.png",
         icon        : "paper-icon.png",
-        categories  : [ "escritório" ],
+        categories  : [ "escritório", "impressora" ],
     },
     {
         id          : 4,
@@ -49,7 +49,7 @@ var stocks = [
         units       : 10,
         picture     : "cartridge.png",
         icon        : "cartridge-icon.png",
-        categories  : [ "escritório" ],
+        categories  : [ "escritório", "impressora" ],
     },
 ];
 

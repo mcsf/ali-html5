@@ -1,3 +1,6 @@
 Para cada ficheiro de ajuda neste directório, a primeira linha
 corresponde ao título da secção de ajuda, e é transformada em título na
 geração do overlay de ajuda.
+
+No resto do ficheiro, deixar uma linha vazia (como esta anterior) marca
+um parágrafo (gerado <br/><br/>). Admite-se código em HTML.

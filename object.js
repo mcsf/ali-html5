@@ -58,7 +58,7 @@ var objects = [
         room        : 1,
         info        : "Arrumado a 9 de Outubro",
         picture     : "question.png",
-        categories  : [ "livros" ],
+        categories  : [ "não-identificado" ],
     },
 ];
 

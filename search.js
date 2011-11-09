@@ -13,6 +13,17 @@ function contains(obj, key) {
     return found;
 };
 
+function matchesAny(arr, str) {
+    var found = false;
+    $.each(arr, function(i,v) {
+        if (v.match(str)) {
+            found = true;
+            return;
+        }
+    });
+    return found;
+};
+
 
 /**
  * Incremental search for object list:
@@ -32,7 +43,8 @@ function incrSearchUpdate() {
     $("#itemlist > div").each(function () {
         var attrs = objects[$(this).find(".id").val()];
 
-        if (attrs.description.toLowerCase().match(input)
+        if ((attrs.description.toLowerCase().match(input)
+                || matchesAny(attrs.categories, input))
             && ($.isEmptyObject(labels)
                 || contains(labels, attrs.room))) {
 
@@ -99,7 +111,8 @@ function stockSearchUpdate() {
     $("#stocklist > div").each(function () {
         var attrs = stocks[$(this).find(".id").val()];
 
-        if (attrs.description.toLowerCase().match(input)) {
+        if (attrs.description.toLowerCase().match(input)
+            || matchesAny(attrs.categories, input)) {
             $(this).show();
         }
         else {
