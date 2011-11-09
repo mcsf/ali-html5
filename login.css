@@ -121,3 +121,7 @@ body {
     width  : 43px;
     height : 43px;
 }
+
+.overlay {
+    left : 192px;
+}

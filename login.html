@@ -1,10 +1,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="overlay.css" type="text/css" />
         <link rel="stylesheet" href="login.css" type="text/css" />
         <script src="lib/jquery-1.6.4.min.js"></script>
+        <script src="overlay.js"></script>
+        <script src="help.js"></script>
         <script src="login.js"></script>
-
         <title>ALI</title>
     </head>
 
@@ -53,6 +55,12 @@
             <div class="prompt">
                 <img src="layout/void-pixel.png"/>
                 <input type="text" action="login.html" value="Insira palavra-passe..."/>
+            </div>
+
+            <div id="help_overlay_template">
+                <img class="close selectable" src="layout/close.png"/>
+                <p class="help title"></p>
+                <p class="help contents"></p>
             </div>
 
         </div>

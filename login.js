@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+    loadHelp();
+
+    /* Show help on click */
+    $("#help").click(function() {
+        if ($(".overlay").length > 0) return;
+        createOverlay("login", "#help_overlay_template", helpOverlayFill);
+    });
+
     $(".user").add(".new").click(function() {
 	$("#login .prompt").remove();
 
