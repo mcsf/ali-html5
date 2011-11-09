@@ -6,7 +6,6 @@
 
 var objects = [
     {
-        id          : 0,
         icon        : "chaves_casa_icon.png",
         description : "Chaves da casa",
         location    : "Secretária do quarto",
@@ -17,7 +16,6 @@ var objects = [
         categories  : [ "chaves" ],
     },
     {
-        id          : 1,
         icon        : "chaves_carro_icon.png",
         description : "Chaves do carro",
         location    : "Cómoda da despensa",
@@ -28,7 +26,6 @@ var objects = [
         categories  : [ "chaves" ],
     },
     {
-        id          : 2,
         icon        : "canivete-icon.png",
         description : "Canivete",
         location    : "Mesa da sala",
@@ -39,7 +36,6 @@ var objects = [
         categories  : [ "ferramentas", "campismo" ],
     },
     {
-        id          : 3,
         icon        : "zarathustra-icon.png",
         description : "Nietzsche, Also Sprach Zarathustra",
         location    : "Chão da sala",
@@ -50,7 +46,6 @@ var objects = [
         categories  : [ "livros" ],
     },
     {
-        id          : 4,
         icon        : "question-icon.png",
         description : "Objecto não identificado",
         location    : "Chão da sala",

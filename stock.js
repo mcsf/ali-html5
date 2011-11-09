@@ -4,7 +4,6 @@
 
 var stocks = [
     {
-        id          : 0,
         description : "Agrafos (caixa de 100)",
         units       : 4,
         picture     : "staples.png",
@@ -12,7 +11,6 @@ var stocks = [
         categories  : [ "escritório" ],
     },
     {
-        id          : 1,
         description : "CDs graváveis",
         units       : 0,
         picture     : "cd.png",
@@ -20,7 +18,6 @@ var stocks = [
         categories  : [ "escritório", "digital" ],
     },
     {
-        id          : 2,
         description : "Cargas de tinta para caneta",
         units       : 3,
         picture     : "pen-ink.png",
@@ -28,7 +25,6 @@ var stocks = [
         categories  : [ "escritório" ],
     },
     {
-        id          : 3,
         description : "Papel para impressora (maço de 50)",
         units       : 7,
         picture     : "paper.png",
@@ -36,7 +32,6 @@ var stocks = [
         categories  : [ "escritório", "impressora" ],
     },
     {
-        id          : 4,
         description : "Post-It &reg; (caixa de 200)",
         units       : 2,
         picture     : "post-it.png",
@@ -44,7 +39,6 @@ var stocks = [
         categories  : [ "escritório" ],
     },
     {
-        id          : 5,
         description : "Tinteiro para impressora",
         units       : 10,
         picture     : "cartridge.png",

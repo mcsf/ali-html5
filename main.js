@@ -22,6 +22,13 @@ function switchState(newState) {
 };
 
 
+function objectCmp(a,b) {
+    if (a.description < b.description) return -1;
+    else if (a.description > b.description) return 1;
+    else return 0;
+};
+
+
 /**
  * Main
  */
@@ -41,8 +48,11 @@ $(document).ready(function() {
         house.onload = drawHouse;
 
         /* Generate Object and Stock lists */
-        $.each(objects, function(i,v) { createItem(v); });
-        $.each(stocks, function(i,v) { createStockItem(v); });
+        //objects.push.apply(objects, stocks);
+        objects.sort(objectCmp);
+        stocks.sort(objectCmp);
+        $.each(objects, function(i,v) { v.id = i; createItem(v); });
+        $.each(stocks, function(i,v) { v.id = i; createStockItem(v); });
 
         /* Set to initial state */
         switchState(state);
