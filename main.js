@@ -65,6 +65,14 @@ $(document).ready(function() {
             switchState($(this).attr("id").substr(4));
         });
 
+        /* Load help strings */
+        loadHelp();
+
+        /* Show help on click */
+        $("#help").click(function() {
+            if ($(".overlay").length > 0) return;
+            createOverlay(state, "#help_overlay_template", helpOverlayFill);
+        });
 
         /* Mouse actions for Object search */
 
@@ -88,6 +96,7 @@ $(document).ready(function() {
 
         /* Show object details upon click */
         $("#itemlist > .item").click(function() {
+            if ($(".overlay").length > 0) return;
             if ($(this).css("cursor") != "pointer") return;
             var id = $(this).find(".id").val();
             createOverlay(id, "#overlay_template", itemOverlayFill);

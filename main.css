@@ -324,6 +324,8 @@ canvas {
 .overlay .category {
     background    : #0571dc;
 }
+
+.overlay .help.title,
 .overlay button,
 .overlay > .units > span,
 .overlay .category {
@@ -371,6 +373,26 @@ button {
     right       : 5px;
 }
 
+.overlay > .help.title {
+    position   : absolute;
+    left       : 5px;
+    width      : 613px;
+    color      : #0571dc;
+    background : none;
+    text-align : center;
+}
+
+.overlay > .help.contents {
+    position      : absolute;
+    left          : 5px;
+    top           : 35px;
+    width         : 613px;
+    height        : 335px;
+    padding-left  : 10px;
+    padding-right : 10px;
+    overflow      : auto;
+    text-align    : justify;
+}
 
 .label {
     border-radius : 5px;
