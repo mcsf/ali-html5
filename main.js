@@ -37,7 +37,7 @@ $(document).ready(function() {
         kinetic.setStage(canvasEventListener);
         $("canvas").attr("width", "270").attr("height", "660");
         house        = new Image();
-        house.src    = "house.png";
+        house.src    = "layout/house.png";
         house.onload = drawHouse;
 
         /* Generate Object and Stock lists */

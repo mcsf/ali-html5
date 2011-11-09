@@ -45,7 +45,7 @@ function incrSearchUpdate() {
 
             if (!attrs.imgObj) {
                 attrs.imgObj     = new Image();
-                attrs.imgObj.src = attrs.icon;
+                attrs.imgObj.src = "objects/" + attrs.icon;
             }
             ctx.drawImage(attrs.imgObj, attrs.coords[0], attrs.coords[1],
                 45, 45);

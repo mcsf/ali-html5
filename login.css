@@ -22,7 +22,7 @@ body {
     text-align       : center;
     color            : white;
     background       : black;
-    background-image : url('tray.png');
+    background-image : url('layout/tray.png');
 }
 
 #box {
@@ -31,7 +31,7 @@ body {
     top      : 176px;
     width    : 325px;
     height   : 438px;
-    background-image : url('login-bg.png');
+    background-image : url('layout/login-bg.png');
 }
 
 #login {
@@ -52,7 +52,7 @@ body {
 #login > div {
     width : 299px;
     height : 44px;
-    background-image: url('user-bg.png')
+    background-image: url('layout/user-bg.png')
 }
 
 #login > div > img {

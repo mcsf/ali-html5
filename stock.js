@@ -79,14 +79,14 @@ function renderUnits(n) {
 
 /* Stock list item generation */
 function createStockItem(attrs) {
-    $("#stocklist").append($('<div class="stock selectable"> <img src="' + attrs.icon + '"/> <span class="description">' + attrs.description + '</span>' + renderUnits(attrs.units) + '<input type="hidden" class="id" value="' + attrs.id + '"/></div>'));
+    $("#stocklist").append($('<div class="stock selectable"> <img src="objects/' + attrs.icon + '"/> <span class="description">' + attrs.description + '</span>' + renderUnits(attrs.units) + '<input type="hidden" class="id" value="' + attrs.id + '"/></div>'));
 };
 
 
 /* Filling function for overlay generation */
 function stockOverlayFill(o, id) {
     var attrs = stocks[id];
-    o.find(".picture").attr("src", attrs.picture);
+    o.find(".picture").attr("src", "objects/" + attrs.picture);
     o.find(".description").html(attrs.description);
     o.find(".units").append(renderUnits(attrs.units));
     $.each(attrs.categories, function(i,v) {

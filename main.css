@@ -22,7 +22,7 @@ body {
     text-align       : center;
     color            : white;
     background       : black;
-    background-image : url('tray.png');
+    background-image : url('layout/tray.png');
 }
 
 #titles {
@@ -41,7 +41,7 @@ body {
     height           : 100%;
     text-align       : center;
     border-right     : 1px solid #797f8f;
-    background-image : url('ali.png');
+    background-image : url('layout/ali.png');
 }
 
 #state {
@@ -51,7 +51,7 @@ body {
     width            : 723px;
     height           : 100%;
     text-align       : center;
-    background-image : url('state.png');
+    background-image : url('layout/state.png');
 }
 
 #state_text {
@@ -99,7 +99,7 @@ body {
     width            : 300px;
     height           : 100%;
     border-right     : 1px solid #797f8f;
-    background-image : url('nav.png');
+    background-image : url('layout/nav.png');
     font-size        : 12pt;
 }
 
@@ -109,7 +109,7 @@ body {
     left             : 301px;
     width            : 723px;
     height           : 100%;
-    background-image : url('body.png');
+    background-image : url('layout/body.png');
 }
 
 #body > p, #body > div > p, #body > div > div {
@@ -126,7 +126,7 @@ body {
 .nav_header {
     width            : 300px;
     height           : 23px;
-    background-image : url('nav-header.png');
+    background-image : url('layout/nav-header.png');
     color            : white;
     font-weight      : bold;
 }
@@ -141,16 +141,16 @@ body {
     position         : relative;
     width            : 300px;
     height           : 44px;
-    background-image : url('nav-button.png');
+    background-image : url('layout/nav-button.png');
 }
 
 .nav_button.selected {
-    background-image : url('nav-button-sel.png');
+    background-image : url('layout/nav-button-sel.png');
     color            : white;
 }
 
 .nav_button:hover:not(.selected) {
-    background-image : url('nav-button-hi.png');
+    background-image : url('layout/nav-button-hi.png');
 }
 
 .nav_button > .icon {
@@ -205,7 +205,7 @@ canvas {
     position          : relative;
     width             : 412px;
     height            : 78px;
-    background-image  : url('object.png');
+    background-image  : url('layout/object.png');
     background-repeat : no-repeat;
 }
 

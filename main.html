@@ -2,8 +2,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="main.css" type="text/css" />
-        <script src="jquery-1.6.4.min.js"></script>
-        <script src="kinetic2d-v1.0.5.js"></script>
+        <script src="lib/jquery-1.6.4.min.js"></script>
+        <script src="lib/kinetic2d-v1.0.5.js"></script>
         <script src="object.js"></script>
         <script src="stock.js"></script>
         <script src="search.js"></script>
@@ -18,7 +18,7 @@
 
         <!-- CONTORNO FÍSICO DO IPAD (desligado no CSS) -->
         <div id="frame">
-            <img src="frame.png" border="0" usemap="#m_frame" />
+            <img src="layout/frame.png" border="0" usemap="#m_frame" />
             <map id="m_frame">
                 <area shape="rect" coords="0,0,0,0" href="#" />
             </map>
@@ -33,11 +33,11 @@
 		<div id="state">
 		    <span id="state_text">Objecto</span>
 		    <span id="help" class="state_icon selectable">
-			<img src="icon-help.svg"/>
+			<img src="layout/icon-help.svg"/>
 			<p>Ajuda</p>
 		    </span>
 		    <span id="logout" class="state_icon selectable">
-			<img src="icon-logout.svg"/>
+			<img src="layout/icon-logout.svg"/>
 			<p>Sair</p>
 		    </span>
 		</div>
@@ -53,12 +53,12 @@
                     </div>
 
                     <div class="nav_button selectable enabled" id="nav_object">
-                        <span class="icon"><img src="icon-search.svg"/></span>
+                        <span class="icon"><img src="layout/icon-search.svg"/></span>
                         <span class="text">Objecto</span>
                     </div>
 
                     <div class="nav_button selectable">
-                        <span class="icon"><img src="icon-categories.svg"/></span>
+                        <span class="icon"><img src="layout/icon-categories.svg"/></span>
                         <span class="text">Categorias</span>
                     </div>
 
@@ -68,17 +68,17 @@
                     </div>
 
                     <div class="nav_button selectable">
-                        <span class="icon"><img src="icon-food.svg"/></span>
+                        <span class="icon"><img src="layout/icon-food.svg"/></span>
                         <span class="text">Alimentação</span>
                     </div>
 
                     <div class="nav_button selectable enabled" id="nav_office">
-                        <span class="icon"><img src="icon-office.svg"/></span>
+                        <span class="icon"><img src="layout/icon-office.svg"/></span>
                         <span class="text">Escritório</span>
                     </div>
 
                     <div class="nav_button selectable">
-                        <span class="icon"><img src="icon-cleanup.svg"/></span>
+                        <span class="icon"><img src="layout/icon-cleanup.svg"/></span>
                         <span class="text">Limpeza</span>
                     </div>
 
@@ -88,25 +88,25 @@
                     </div>
 
                     <div class="nav_button selectable">
-                        <span class="icon"><img src="icon-new.svg"/></span>
+                        <span class="icon"><img src="layout/icon-new.svg"/></span>
                         <span class="text">2 novos objectos</span>
                     </div>
 
                     <div class="nav_button selectable">
-                        <span class="icon"><img src="icon-urgent.svg"/></span>
+                        <span class="icon"><img src="layout/icon-urgent.svg"/></span>
                         <span class="text">1 artigo esgotado</span>
                     </div>
 
                     <div class="nav_button selectable">
-                        <span class="icon"><img src="icon-warning.svg"/></span>
+                        <span class="icon"><img src="layout/icon-warning.svg"/></span>
                         <span class="text">2 artigos em fim de stock</span>
                     </div>
 
                 </div>
 
                 <div id="overlay_template">
-                    <img class="close selectable" src="close.png"/>
-                    <img class="picture" src="chaves_casa.png"/>
+                    <img class="close selectable" src="layout/close.png"/>
+                    <img class="picture" src="objects/chaves_casa.png"/>
                     <p class="description"></p>
                     <p class="location">
                         <b>Localização</b>
@@ -120,8 +120,8 @@
                 </div>
 
                 <div id="stock_overlay_template">
-                    <img class="close selectable" src="close.png"/>
-                    <img class="picture" src="question.png"/>
+                    <img class="close selectable" src="layout/close.png"/>
+                    <img class="picture" src="objects/question.png"/>
                     <p class="description"></p>
                     <p class="units">
                         <b>Stock</b>
@@ -149,7 +149,7 @@
                     <div id="body_object">
                         <p>
                             <input type="text" id="incr_search" class="selectable" />
-                            <img id="incr_search_clear" class="selectable" src="erase.png" />
+                            <img id="incr_search_clear" class="selectable" src="layout/erase.png" />
                             <div id="labels"></div>
                         </p>
 
@@ -162,7 +162,7 @@
                     <div id="body_office">
                         <p>
                             <input type="text" id="stock_search" class="selectable" />
-                            <img id="stock_search_clear" class="selectable" src="erase.png" />
+                            <img id="stock_search_clear" class="selectable" src="layout/erase.png" />
                         </p>
 
                         <div id="stocklist"></div>
