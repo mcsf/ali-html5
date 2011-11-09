@@ -1,5 +1,5 @@
-function createOverlay(id, fillFn) {
-    var o = $("#overlay_template").clone();
+function createOverlay(id, template, fillFn) {
+    var o = $(template).clone();
 
     /* Fill it */
     fillFn(o, id);

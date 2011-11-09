@@ -90,7 +90,7 @@ $(document).ready(function() {
         $("#itemlist > .item").click(function() {
             if ($(this).css("cursor") != "pointer") return;
             var id = $(this).find(".id").val();
-            createOverlay(id, itemOverlayFill);
+            createOverlay(id, "#overlay_template", itemOverlayFill);
         });
 
 
@@ -118,6 +118,6 @@ $(document).ready(function() {
         $("#stocklist > .stock").click(function() {
             if ($(this).css("cursor") != "pointer") return;
             var id = $(this).find(".id").val();
-            createOverlay(id, stockOverlayFill);
+            createOverlay(id, "#stock_overlay_template", stockOverlayFill);
         });
 });
