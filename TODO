@@ -11,6 +11,7 @@
 --- Documentação
 + ↑ Implementar modo de ajuda
 - ↑ Documentar tarefas, ecrãs
+- Overlay simples para sinalizar acções/links não implementados
 
 --- Login
 - Novo utiliz.: prompt username
@@ -21,7 +22,7 @@
 @ Zoom no Overlay?
 
 --- Procura Mapa
-- ↑ Fix: quando se retira todas as labels e há texto na barra
++ ↑ Fix: quando se retira todas as labels e há texto na barra
 - Localizar obj. na planta ao clicar nele
 @ Clicar nos ícones do mapa para seleccionar objs (difícil)
 
@@ -33,6 +34,7 @@
 - Ver todos os artigos de stock que o ALI não permite que esgotem
 
 --- Extras
+- Teclado dummy
 - Simular manipulação física dos objectos
 @ Remover dummy tray se o browser for de iPad/iOS
 

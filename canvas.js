@@ -43,8 +43,14 @@ function canvasEventListener() {
     });
 };
 
+function removeLabel(i) {
+    delete labels[i];
+    incrSearchActivate();
+    incrSearchUpdate();
+};
 
 function roomClickHandler(i) {
+    /* Clicking on a new room creates new label */
     if (!labels[i]) {
         labels[i] = true;
 
@@ -55,20 +61,19 @@ function roomClickHandler(i) {
             + i + '"/></span>'
         );
 
+        /* Clicking on the label's cross deletes it */
         label.find("a").click(function() {
-            var id = $(this).parent().find("input").val();
-            delete labels[id];
             $(this).parent().remove();
-            if ($.isEmptyObject(labels))
-                incrSearchReset();
-            else {
-                incrSearchActivate();
-                incrSearchUpdate();
-            }
+            removeLabel(i);
         });
 
         $("#labels").append(label);
         incrSearchActivate();
         incrSearchUpdate();
+    }
+    /* Clicking on a selected room deletes a label */
+    else {
+        $('#labels input:hidden:[value="'+i+'"]').parent().remove();
+        removeLabel(i);
     }
 };
