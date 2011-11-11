@@ -10,6 +10,11 @@ var house;
 var labels = {}; /* Initial filters */
 var state = "object"; /* Initial state */
 
+/**
+ * Debug
+ */
+
+var debug_stock_filter = false;
 
 /**
  * Helper functions
@@ -144,4 +149,13 @@ $(document).ready(function() {
             var id = $(this).find(".id").val();
             createOverlay(id, "#stock_overlay_template", stockOverlayFill);
         });
+
+        /* DEBUG */
+
+        $("#debug_stock_filter").click(function() {
+            debug_stock_filter = !debug_stock_filter;
+            stockSearchActivate();
+            stockSearchUpdate();
+        });
+
 });

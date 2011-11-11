@@ -88,4 +88,10 @@ function stockOverlayFill(o, id) {
             '&nbsp;<span class="category selectable">'
             + v + '</span>\n');
     });
+    o.find("input:checkbox")
+        .click(function() {
+            stocks[id].manage = !stocks[id].manage;
+            stockSearchUpdate();
+        })
+        .attr("checked", stocks[id].manage);
 };

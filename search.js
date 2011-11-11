@@ -111,6 +111,11 @@ function stockSearchUpdate() {
     $("#stocklist > div").each(function () {
         var attrs = stocks[$(this).find(".id").val()];
 
+        if (debug_stock_filter && !attrs.manage) {
+            $(this).hide();
+            return;
+        }
+
         if (attrs.description.toLowerCase().match(input)
             || matchesAny(attrs.categories, input)) {
             $(this).show();

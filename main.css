@@ -3,6 +3,14 @@ body {
     font-family : "Helvetica";
 }
 
+#debug {
+    position : fixed;
+    left     : 1060px;
+    top      : 10px;
+    color    : black;
+    font-size : 10pt;
+}
+
 #frame {
     display : none
 }
