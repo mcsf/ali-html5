@@ -9,7 +9,13 @@ function loadHelp() {
         $.get("doc/" + v.source, function(data) {
             var n      = data.indexOf("\n");
             v.title    = data.substr(0, n);
-            v.contents = data.substr(n+1).replace("\n\n", "<br/><br/>");
+            v.contents = data.substr(n+1)
+                            /* Empty line means new paragraph */
+                            .replace(/\n\n/g, "<br/><br/>")
+                            /* Use *asterisks* for bold */
+                            .replace(/\*([^*]*)\*/g, "<b>$1</b>")
+                            /* Use _underscores_ for italic */
+                            .replace(/_([^_]*)_/g, "<i>$1</i>");
         }, 'text');
     });
 };

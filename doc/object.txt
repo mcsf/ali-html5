@@ -1,3 +1,26 @@
 Procura de Objectos
 
-Por documentar.
+A procura pode ser feita de três formas:
+
+*1.* Procurando um objecto pela sua descrição ou categorias, introduzindo
+estas na barra de procura. A procura é feita incrementalmente, isto é,
+os resultados da pesquisa são apresentados à medida que se vai
+escrevendo.
+
+*2.* Procurando pelo conteúdo de uma ou mais assoalhadas, clicando em uma ou
+mais destas na planta da casa. As assoalhadas seleccionadas são apresentadas
+sob a forma de uma etiqueta por baixo da barra de procura textual. Se nenhuma
+assoalhada em particular estiver seleccionada, a procura é feita em _toda_ a
+casa.
+
+*3.* Através de uma combinação destes dois métodos. Por exemplo,
+para procurar quaisquer chaves que estejam na cozinha, introduz-se
+"chaves" na barra de procura e selecciona-se a cozinha clicando nela na
+planta.
+
+A qualquer momento, na planta da casa, só estão a cores as assoalhadas que
+contêm objectos que estão na lista de resultados à esquerda — isto é, os
+objectos que correspondem ao que está escrito na barra de procura _e_ às
+assoalhadas seleccionadas —, ficando as restantes assoalhadas escurecidas. É
+possível limpar uma procura (desseleccionando todas as assoalhadas e limpando a
+barra de procura) clicando no botão em cruz que está na barra de procura.
