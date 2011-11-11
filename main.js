@@ -84,6 +84,11 @@ $(document).ready(function() {
             createOverlay(state, "#help_overlay_template", helpOverlayFill);
         });
 
+        /* Return to login screen */
+        $("#logout").click(function() {
+            window.location = "login.html";
+        });
+
         /* Mouse actions for Object search */
 
         /* Incremental search upon typing */
