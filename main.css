@@ -338,3 +338,8 @@ canvas {
 #stocklist .stock:hover {
     background: #c5c7cc;
 }
+
+#stocklist > p {
+    font-style : italic;
+    text-align : center;
+}

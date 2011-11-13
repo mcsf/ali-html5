@@ -23,7 +23,18 @@ var debug_stock_filter = false;
 function switchState(newState) {
     state = newState;
     $("#body > div").hide();
-    $("#body_" + state).show();
+
+    switch (state) {
+        case "office_u": // _u for urgent
+        case "office_w": // _w for warning
+            $("#body_office").show();
+            stockSearchUpdate();
+            break;
+        case "office":
+            stockSearchUpdate();
+        default:
+            $("#body_" + state).show();
+    }
 };
 
 
@@ -74,7 +85,12 @@ $(document).ready(function() {
             $(this).addClass("selected");
 
             /* Update header title for new state */
-            $("#state_text").html($(this).find(".text").html());
+            var title;
+            if ($(this).find("input:hidden").val())
+                title = $(this).find("input:hidden").val();
+            else
+                title = $(this).find(".text").html();
+            $("#state_text").html(title);
 
             /* Show contents for new state */
             switchState($(this).attr("id").substr(4));
@@ -154,7 +170,6 @@ $(document).ready(function() {
 
         $("#debug_stock_filter").click(function() {
             debug_stock_filter = !debug_stock_filter;
-            stockSearchActivate();
             stockSearchUpdate();
         });
 

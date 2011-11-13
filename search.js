@@ -106,7 +106,11 @@ function incrSearchActivate() {
  */
 
 function stockSearchUpdate() {
+    var found = false;
     var input = $("#stock_search").val().toLowerCase();
+    if (input == "buscar...") input = ""; // ugly
+
+    $("#stocklist > p").remove();
 
     $("#stocklist > div").each(function () {
         var attrs = stocks[$(this).find(".id").val()];
@@ -116,14 +120,29 @@ function stockSearchUpdate() {
             return;
         }
 
+        if ((state == "office_u") && (attrs.units != 0)) {
+            $(this).hide();
+            return;
+        }
+
+        if ((state == "office_w") && (attrs.units >= 4)) {
+            $(this).hide();
+            return;
+        }
+
         if (attrs.description.toLowerCase().match(input)
             || matchesAny(attrs.categories, input)) {
+            found = true;
             $(this).show();
         }
         else {
             $(this).hide();
         }
     });
+
+    if (!found) {
+        $("#stocklist").append("<p>Nenhum item encontrado</p>");
+    }
 };
 
 function stockSearchReset() {
