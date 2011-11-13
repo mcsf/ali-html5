@@ -11,6 +11,7 @@
         <script src="canvas.js"></script>
         <script src="overlay.js"></script>
         <script src="help.js"></script>
+        <script src="debug.js"></script>
         <script src="main.js"></script>
 
         <title>ALI</title>
@@ -186,13 +187,23 @@
 
                 </div>
 
-                <p id="debug">
-                    <b>Debug</b><br/><br/>
+                <div id="debug">
+                    <h3>Debug</h3>
 
-                    <input type="checkbox" id="debug_stock_filter"/>
-                    Stock: Mostrar apenas objectos auto-geridos pelo ALI
+                    <p>
+                        <input type="checkbox" id="debug_stock_filter"/>
+                        Stock: Mostrar apenas objectos auto-geridos pelo ALI
+                    </p>
 
-                </p>
+                    <h3>Simulações</h3>
+
+                    <p>
+                        Mover canivete para
+                        <a href="#" id="debug_move_0">a cozinha</a> |
+                        <a href="#" id="debug_move_1">a sala</a>
+                    </p>
+
+                </div>
 
 
             </div>

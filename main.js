@@ -176,4 +176,7 @@ $(document).ready(function() {
             stockSearchUpdate();
         });
 
+        $("#debug_move_0").click(debugMove0);
+        $("#debug_move_1").click(debugMove1);
+
 });

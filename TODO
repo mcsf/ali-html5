@@ -35,8 +35,9 @@
 - Integrar essa vista no ALI
 
 --- Extras
++ Simular manipulação física dos objectos: mover
+- Simular manipulação física dos objectos: outras acções
 - Teclado dummy
-- Simular manipulação física dos objectos
 @ Remover dummy tray se o browser for de iPad/iOS
 
 ========================================================================

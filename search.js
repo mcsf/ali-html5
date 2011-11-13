@@ -40,6 +40,7 @@ function incrSearchUpdate() {
     ctx.clearRect(0, 0, 270, 660);
     drawHouse();
 
+    if (input == "buscar...") input = ""; // ugly
     $("#itemlist > div").each(function () {
         var attrs = objects[$(this).find(".id").val()];
 

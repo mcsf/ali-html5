@@ -4,11 +4,20 @@ body {
 }
 
 #debug {
+    display  : inline;
     position : fixed;
     left     : 1060px;
     top      : 10px;
     color    : black;
     font-size : 10pt;
+}
+
+#debug p:nth-child(odd) {
+    background : #fee;
+}
+
+#debug p:nth-child(even) {
+    background : #eef;
 }
 
 #frame {
