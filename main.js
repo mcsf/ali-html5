@@ -10,6 +10,14 @@ var house;
 var labels = {}; /* Initial filters */
 var state = "object"; /* Initial state */
 
+var stateNames = {
+    "object"   : "Objecto",
+    "office"   : "Escritório",
+    "office_u" : "Artigos esgotados",
+    "office_w" : "Artigos em fim de stock",
+};
+
+
 /**
  * Debug
  */
@@ -21,12 +29,24 @@ var debug_stock_filter = false;
  */
 
 function switchState(newState) {
+    var name;
     state = newState;
+
+    /* Update title */
+    $("#state_text").html(stateNames[state]);
+
+    /* Hide all other screens */
     $("#body > div").hide();
 
+    /* Update highlighting on nav menu */
+    var nav = $("#nav_" + state);
+    nav.siblings().removeClass("selected");
+    nav.addClass("selected");
+
+    /* Custom stuff for special states */
     switch (state) {
-        case "office_u": // _u for urgent
-        case "office_w": // _w for warning
+        case "office_u":
+        case "office_w":
             $("#body_office").show();
             stockSearchUpdate();
             break;
@@ -84,15 +104,7 @@ $(document).ready(function() {
             $(this).siblings().removeClass("selected");
             $(this).addClass("selected");
 
-            /* Update header title for new state */
-            var title;
-            if ($(this).find("input:hidden").val())
-                title = $(this).find("input:hidden").val();
-            else
-                title = $(this).find(".text").html();
-            $("#state_text").html(title);
-
-            /* Show contents for new state */
+            /* Show title and contents for new state */
             switchState($(this).attr("id").substr(4));
         });
 
