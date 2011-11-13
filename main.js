@@ -90,8 +90,16 @@ $(document).ready(function() {
             v.id = i;
             v.stocks = true;
             createStockItem(v);
+
+            /* Push into `objects' every instance of each item in `stocks' */
+            for (j = 0; j < v.units; j++) {
+                var newAttrs      = $.extend(true, {}, v);
+                newAttrs.coords   = v.coords[j];
+                newAttrs.location = v.location[j];
+                newAttrs.room     = v.room[j];
+                objects.push(newAttrs);
+            }
         });
-        objects.push.apply(objects, stocks);
         objects.sort(objectCmp);
         $.each(objects, function(i,v) { v.id = i; createItem(v); });
 
