@@ -39,10 +39,10 @@ function switchState(newState) {
     /* Hide all other screens */
     $("#body > div").hide();
 
-    /* Update highlighting on nav menu */
-    var nav = $("#nav_" + state);
-    nav.siblings().removeClass("selected");
-    nav.addClass("selected");
+    /* Decorate corresponding menu item */
+    var item = $("#nav_" + state);
+    item.siblings().removeClass("selected");
+    item.addClass("selected");
 
     /* Custom stuff for special states */
     switch (state) {
@@ -104,10 +104,6 @@ $(document).ready(function() {
         /* Update header when selecting a menu item */
         $(".nav_button.selectable.enabled").click(function() {
             if ($(".overlay").length > 0) return;
-
-            /* Decorate selected menu item */
-            $(this).siblings().removeClass("selected");
-            $(this).addClass("selected");
 
             /* Show title and contents for new state */
             switchState($(this).attr("id").substr(4));
