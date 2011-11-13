@@ -96,6 +96,9 @@ $(document).ready(function() {
             switchState($(this).attr("id").substr(4));
         });
 
+        /* Show "Not Implemented" message for disabled menu items */
+        $(".nav_button.selectable").not(".enabled").click(notImplemented);
+
         /* Load help strings */
         loadHelp();
 

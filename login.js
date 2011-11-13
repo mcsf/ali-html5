@@ -8,6 +8,9 @@ $(document).ready(function() {
         createOverlay("login", "#help_overlay_template", helpOverlayFill);
     });
 
+    /* Preferences option is not implemented */
+    $("#prefs").click(notImplemented);
+
     $(".user").add(".new").click(function() {
 	$("#login .prompt").remove();
 

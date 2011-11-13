@@ -26,3 +26,11 @@ function helpOverlayFill(o, state) {
     o.find(".help.title").text(data.title);
     o.find(".help.contents").html(data.contents);
 };
+
+
+function notImplemented() {
+    if ($(".overlay").length > 0) return;
+    createOverlay(0, "#na_overlay_template", naOverlayFill);
+};
+
+function naOverlayFill() {};

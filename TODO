@@ -10,8 +10,8 @@
 
 --- Documentação
 + ↑ Implementar modo de ajuda
++ Overlay simples para sinalizar acções/links não implementados
 - ↑ Documentar tarefas, ecrãs
-- Overlay simples para sinalizar acções/links não implementados
 
 --- Login
 - Novo utiliz.: prompt username
