@@ -1,7 +1,9 @@
 var help = {
-    object : { source   : "object.txt", },
-    office : { source   : "stocks.txt", },
-    login  : { source   : "login.txt",  },
+    object   : { source : "object.txt", },
+    office   : { source : "stocks.txt", },
+    office_u : { source : "stocks.txt", },
+    office_w : { source : "stocks.txt", },
+    login    : { source : "login.txt",  },
 };
 
 function loadHelp() {
