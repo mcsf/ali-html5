@@ -121,6 +121,7 @@ button {
 
 .overlay .b_order {
     right       : 5px;
+    opacity     : .3;
 }
 
 .overlay > .na,

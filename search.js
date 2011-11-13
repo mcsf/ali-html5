@@ -44,6 +44,26 @@ function incrSearchUpdate() {
     $("#itemlist > div").each(function () {
         var attrs = objects[$(this).find(".id").val()];
 
+        if (stocksLocate) {
+            if (attrs.description == stocksLocate) {
+                $(this).css({ opacity : 1 }).show();
+                delete inactiveRooms[attrs.room];
+                if (!attrs.imgObj) {
+                    attrs.imgObj     = new Image();
+                    attrs.imgObj.src = "objects/" + attrs.icon;
+                }
+                ctx.drawImage(attrs.imgObj, attrs.coords[0], attrs.coords[1],
+                    45, 45);
+            }
+            else $(this).hide();
+            return;
+        }
+
+        if (attrs.stocks) {
+            $(this).hide();
+            return;
+        }
+
         if ((attrs.description.toLowerCase().match(input)
                 || matchesAny(attrs.categories, input))
             && ($.isEmptyObject(labels)
@@ -53,8 +73,7 @@ function incrSearchUpdate() {
                 .animate({ opacity: 1 }, 500)
                 .show();
 
-            var roomNo = attrs.room;
-            delete inactiveRooms[roomNo];
+            delete inactiveRooms[attrs.room];
 
             if (!attrs.imgObj) {
                 attrs.imgObj     = new Image();
@@ -75,9 +94,17 @@ function incrSearchUpdate() {
 };
 
 function incrSearchReset() {
+    stocksLocate = false;
     $("#incr_search").val("Buscar...").css("color", "#D3D3D3");
 
     $("#itemlist > div").each(function() {
+
+        var attrs = objects[$(this).find(".id").val()];
+        if (attrs.stocks) {
+            $(this).hide();
+            return;
+        }
+
         $(this)
             .animate({ opacity: 0.2 }, 500)
             .show();
@@ -93,6 +120,7 @@ function incrSearchReset() {
 
 function incrSearchActivate() {
     var obj = $("#incr_search");
+    stocksLocate = false;
     if (obj.val() == "Buscar...") { // Ugly
         obj.val("").css("color", $("body").css("color"));
     }

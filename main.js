@@ -17,6 +17,7 @@ var stateNames = {
     "office_w" : "Artigos em fim de stock",
 };
 
+var stocksLocate;
 
 /**
  * Debug
@@ -84,11 +85,15 @@ $(document).ready(function() {
         house.onload = drawHouse;
 
         /* Generate Object and Stock lists */
-        //objects.push.apply(objects, stocks);
-        objects.sort(objectCmp);
         stocks.sort(objectCmp);
+        $.each(stocks, function(i,v) {
+            v.id = i;
+            v.stocks = true;
+            createStockItem(v);
+        });
+        objects.push.apply(objects, stocks);
+        objects.sort(objectCmp);
         $.each(objects, function(i,v) { v.id = i; createItem(v); });
-        $.each(stocks, function(i,v) { v.id = i; createStockItem(v); });
 
         /* Set to initial state */
         switchState(state);
