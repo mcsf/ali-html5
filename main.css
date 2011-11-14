@@ -325,9 +325,14 @@ canvas {
     font-weight : bold;
 }
 
+#stocklist > .stock > .isManaged {
+    top     : 10px;
+    left    : 510px;
+}
+
 #stocklist > .stock > .units {
     top        : 10px;
-    right      : 3px;
+    right      : 7px;
     font-style : italic;
 }
 
@@ -347,6 +352,10 @@ canvas {
     background: #e8e9ed;
 }
 
+#stocklist b {
+    background: transparent !important;
+}
+
 #stocklist .stock:hover {
     background: #c5c7cc;
 }
@@ -354,4 +363,28 @@ canvas {
 #stocklist > p {
     font-style : italic;
     text-align : center;
+}
+
+#stockheader {
+    position    : relative;
+    background  : url('layout/nav-header.png') !important;
+    font-weight : bold;
+    color       : white;
+}
+
+#stockheader * {
+    position   : relative;
+    background : transparent !important;
+}
+
+#stockheader .description {
+    left : 46px;
+}
+
+#stockheader .isManaged {
+    left : 430px;
+}
+
+#stockheader .units {
+    left : 496px;
 }

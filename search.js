@@ -146,7 +146,7 @@ function stockSearchUpdate() {
 
     $("#stocklist > p").remove();
 
-    $("#stocklist > div").each(function () {
+    $("#stocklist > div.stock").each(function () {
         var attrs = stocks[$(this).find(".id").val()];
 
         if (debug_stock_filter && !attrs.manage) {

@@ -109,8 +109,11 @@ function renderUnits(n) {
     s += '">';
 
     /* Text */
-    if (n == 0) s += "Esgotado";
-    else s += "Em stock: " + n + " uds.";
+    if (n == 0) s += "<b>esgotado</b>";
+    else s += /*"Em stock: " + */ n + " unidade";
+
+    /* Plural */
+    if (n > 0) s += "s";
 
     s += '</span>';
 
@@ -120,7 +123,7 @@ function renderUnits(n) {
 
 /* Stock list item generation */
 function createStockItem(attrs) {
-    $("#stocklist").append($('<div class="stock selectable"> <img src="objects/' + attrs.icon + '"/> <span class="description">' + attrs.description + '</span>' + renderUnits(attrs.units) + '<input type="hidden" class="id" value="' + attrs.id + '"/></div>'));
+    $("#stocklist").append($('<div class="stock selectable"> <img src="objects/' + attrs.icon + '"/> <span class="description">' + attrs.description + '</span>' + '<span class="isManaged">' + (attrs.manage ? 'Sim' : 'Não') + '</span>' + renderUnits(attrs.units) + '<input type="hidden" class="id" value="' + attrs.id + '"/></div>'));
 };
 
 
@@ -137,8 +140,10 @@ function stockOverlayFill(o, id) {
     });
     o.find("input:checkbox")
         .click(function() {
-            stocks[id].manage = !stocks[id].manage;
+            var m = stocks[id].manage = !stocks[id].manage;
             notify("A sua alteração foi registada.");
+            $("#stocklist .stock").eq(id).find(".isManaged")
+                .text(m ? "Sim" : "Não");
             stockSearchUpdate();
             deleteOverlay()
         })
