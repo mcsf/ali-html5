@@ -1,3 +1,11 @@
 Autenticação
 
-Por documentar.
+De forma a poder utilizar o ALI, necessita antes de mais de se
+autenticar.
+
+Caso não possua uma conta, carregue em *Novo utilizador* e insira o nome
+de utilizador que pretende adoptar, bem como a palavra-chave que passará
+a ser-lhe pedida.
+
+Se já tem uma conta criada, basta carregar no seu utilizador, e
+autenticar-se inserindo a sua palavra-chave.

@@ -1,3 +1,17 @@
 Gestão de Stocks
 
-Por documentar.
+Nesta secção do ALI, tanto pode consultar os stocks disponíveis,
+localizando-os ‒ caso pretenda ‒ na planta da casa, como pode garantir
+que um determinado artigo nunca venha a esgotar-se, deixando a sua
+gestão ao cuidado do ALI.
+
+De forma a procurar o artigo pretendido, comece por escolher na aba à
+esquerda a categoria pretendida (*Alimentação*, *Escritório* ou
+*Limpeza*). Uma vez escolhida a categoria, poderá então consultar os
+artigos disponíveis através da lista disponibilizada automaticamente,
+ou, caso pretenda, fazer primeiro uma procura pelo nome ou categorias do
+artigo.
+
+Seleccionando um determinado artigo, tem por fim a possibilidade de o
+encomendar, bem como marcá-lo para reposição automática de stock através
+da opção "_Nunca deixar este artigo esgotar-se_".
