@@ -1,3 +1,9 @@
+function debugToggle() {
+    var t = $(this).text();
+    $("#debug").toggleClass("hidden");
+    $(this).text(t == "mostrar" ? "esconder" : "mostrar");
+};
+
 /**
  * Move:
  * - Object: "Canivete"

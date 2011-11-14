@@ -151,3 +151,10 @@ button {
     font-size   : 16pt;
     font-weight : bold;
 }
+
+#keyboard {
+    display  : none;
+    position : absolute;
+    right    : 0px;
+    bottom   : 0px;
+}

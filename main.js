@@ -45,10 +45,7 @@ function getArgs() {
 
 function processArgs() {
     var vars = getArgs();
-
-    if (vars.debug != 0) {
-        $("#debug").removeClass("hidden").show();
-    }
+    if (vars.debug == 0) debugToggle();
 }
 
 function switchState(newState) {
@@ -107,6 +104,11 @@ $(document).ready(function() {
         house.onload = drawHouse;
 
         processArgs();
+
+	/* Ignore href in HTML links */
+	$("a").click(function(e) {
+	    e.preventDefault();
+	});
 
         /* Generate Object and Stock lists */
         stocks.sort(objectCmp);
@@ -216,17 +218,16 @@ $(document).ready(function() {
 
         /* DEBUG */
 
-        $("#debug > h3:first a").click(function() {
-            var t = $(this).text();
-            //$(this).parent().parent().siblings().toggle();
-            $("#debug").toggleClass("hidden");
-            $(this).text(t == "mostrar" ? "esconder" : "mostrar");
-        });
+        $("#debug > h3:first a").click(debugToggle);
 
         $("#debug_stock_filter").click(function() {
             debug_stock_filter = !debug_stock_filter;
             stockSearchUpdate();
         });
+
+	$("#debug").find(".keyboard").click(function() {
+	    $("#keyboard").toggle();
+	});
 
         $("#debug_move_0").click(debugMove0);
         $("#debug_move_1").click(debugMove1);

@@ -3,35 +3,6 @@ body {
     font-family : "Helvetica";
 }
 
-#debug {
-    display  : none;
-    position : fixed;
-    left     : 1060px;
-    top      : 10px;
-    color    : black;
-    font-size : 10pt;
-}
-
-#debug a {
-    color : blue;
-}
-
-#debug.hidden > *:first-child {
-    color : gray;
-}
-
-#debug.hidden *:not(:first-child) {
-    display : none;
-}
-
-#debug p:nth-child(odd) {
-    background : #fee;
-}
-
-#debug p:nth-child(even) {
-    background : #eef;
-}
-
 #frame {
     display : none
 }

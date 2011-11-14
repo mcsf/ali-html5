@@ -2,10 +2,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="overlay.css" type="text/css" />
+        <link rel="stylesheet" href="debug.css" type="text/css" />
         <link rel="stylesheet" href="login.css" type="text/css" />
         <script src="lib/jquery-1.6.4.min.js"></script>
         <script src="overlay.js"></script>
         <script src="help.js"></script>
+        <script src="debug.js"></script>
         <script src="login.js"></script>
         <title>ALI</title>
     </head>
@@ -50,6 +52,15 @@
             </div>
 
         </div>
+
+        <div id="debug" class="hidden">
+            <h3>
+                Debug <small> (<a href="#">mostrar</a>) </small>
+            </h3>
+            <p><a class="keyboard" href="#">Teclado</a></p>
+        </div>
+
+	<img id="keyboard" src="layout/keyboard.png"/>
 
         <div id="hidden">
             <div class="prompt">

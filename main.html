@@ -2,6 +2,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="overlay.css" type="text/css" />
+        <link rel="stylesheet" href="debug.css" type="text/css" />
         <link rel="stylesheet" href="main.css" type="text/css" />
         <script src="lib/jquery-1.6.4.min.js"></script>
         <script src="lib/kinetic2d-v1.0.5.js"></script>
@@ -188,16 +189,18 @@
                 </div>
 
                 <div id="debug" class="hidden">
-                    <h3>Debug
-                        <small>
-                            (<a href="#">mostrar</a>)
-                        </small>
-                    </h3>
+		    <h3>
+			Debug <small> (<a href="#">mostrar</a>) </small>
+		    </h3>
 
                     <p>
                         <input type="checkbox" id="debug_stock_filter"/>
                         Stock: Mostrar apenas objectos auto-geridos pelo ALI
                     </p>
+
+		    <p>
+			<a class="keyboard" href="#">Teclado</a>
+		    </p>
 
                     <h3>Simulações</h3>
 
@@ -209,6 +212,7 @@
 
                 </div>
 
+		<img id="keyboard" src="layout/keyboard.png"/>
 
             </div>
 
