@@ -4,6 +4,7 @@ body {
     height           : 768px;
     color            : #70777f;
     font-family      : "Helvetica";
+    margin	     : 5px;
 }
 
 #bg {

@@ -29,6 +29,28 @@ var debug_stock_filter = false;
  * Helper functions
  */
 
+function getArgs() {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(
+            window.location.href.indexOf('?') + 1).split('&');
+
+    for(var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+
+    return vars;
+}
+
+function processArgs() {
+    var vars = getArgs();
+
+    if (vars.debug != 0) {
+        $("#debug").removeClass("hidden").show();
+    }
+}
+
 function switchState(newState) {
     var name;
     state = newState;
@@ -83,6 +105,8 @@ $(document).ready(function() {
         house        = new Image();
         house.src    = "layout/house.png";
         house.onload = drawHouse;
+
+        processArgs();
 
         /* Generate Object and Stock lists */
         stocks.sort(objectCmp);
@@ -191,6 +215,13 @@ $(document).ready(function() {
         });
 
         /* DEBUG */
+
+        $("#debug > h3:first a").click(function() {
+            var t = $(this).text();
+            //$(this).parent().parent().siblings().toggle();
+            $("#debug").toggleClass("hidden");
+            $(this).text(t == "mostrar" ? "esconder" : "mostrar");
+        });
 
         $("#debug_stock_filter").click(function() {
             debug_stock_filter = !debug_stock_filter;
