@@ -8,36 +8,28 @@
 
 ========================================================================
 
---- Documentação
-+ ↑ Implementar modo de ajuda
-+ Overlay simples para sinalizar acções/links não implementados
-- ↑ Documentar tarefas, ecrãs
-
 --- Login
 - Novo utiliz.: prompt username
 
 --- Procura String
 # Consultar http://slides.html5rocks.com/#new-form-types
-+ Procurar nas categorias para além de descrição
+- Oferecer possib. encontrar bens consumíveis
 @ Zoom no Overlay?
 
 --- Procura Mapa
-+ ↑ Fix: quando se retira todas as labels e há texto na barra
+- Não escurecer uma assoalhada vazia quando seleccionada explicitamente
 - Localizar obj. na planta ao clicar nele
 @ Clicar nos ícones do mapa para seleccionar objs (difícil)
 
 --- Stocks
-+ Ligar menu de Notificações a artigos em ruptura em Stocks
-+ Ver localizações
+- Diferentes localizações: mais compreensível; numeradas?
 
 --- Novas Tarefas
-+ Ver todos os artigos de stock que o ALI não permite que esgotem
-- Integrar essa vista no ALI
+- Integrar uma vista dos artigos auto-geridos
 
 --- Extras
 + Simular manipulação física dos objectos: mover
 - Simular manipulação física dos objectos: outras acções
-- Teclado dummy
 @ Remover dummy tray se o browser for de iPad/iOS
 
 ========================================================================
