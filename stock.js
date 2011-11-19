@@ -9,19 +9,20 @@ var stocks = [
         picture     : "staples.png",
         icon        : "staples-icon.png",
         categories  : [ "escritório" ],
-        coords      : [
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	],
-        location    : [
-	    "Chão da despensa",
-	    "Chão da despensa",
-	    "Chão da despensa",
-	    "Chão da despensa",
-	],
-        room	    : [ 2, 2, 2, 2 ],
+        locations   : [
+            {
+                coords   : [ 180, 270 ],
+                location : "Chão da despensa",
+                room     : 2,
+                units    : 1,
+            },
+            {
+                coords   : [ 220, 290 ],
+                location : "Cómoda da despensa",
+                room     : 2,
+                units    : 3,
+            },
+        ],
     },
     {
         description : "CDs graváveis",
@@ -29,9 +30,7 @@ var stocks = [
         picture     : "cd.png",
         icon        : "cd-icon.png",
         categories  : [ "escritório", "digital" ],
-        coords      : [ ],
-        location    : [ ],
-        room	    : [ ],
+        locations   : [],
     },
     {
         description : "Cargas de tinta para caneta",
@@ -39,17 +38,14 @@ var stocks = [
         picture     : "pen-ink.png",
         icon        : "pen-ink-icon.png",
         categories  : [ "escritório" ],
-        coords      : [
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	],
-        location    : [
-	    "Chão da despensa",
-	    "Chão da despensa",
-	    "Chão da despensa",
-	],
-        room	    : [ 2, 2, 2 ],
+        locations   : [
+            {
+                coords   : [ 180, 270 ],
+                location : "Chão da despensa",
+                room     : 2,
+                units    : 3,
+            },
+        ],
     },
     {
         description : "Papel para impressora (maço de 50)",
@@ -57,25 +53,14 @@ var stocks = [
         picture     : "paper.png",
         icon        : "paper-icon.png",
         categories  : [ "escritório", "impressora" ],
-        coords      : [
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	],
-        location    : [
-	    "Chão da despensa",
-	    "Chão da despensa",
-	    "Chão da despensa",
-	    "Chão da despensa",
-	    "Chão da despensa",
-	    "Chão da despensa",
-	    "Chão da despensa",
-	],
-        room	    : [ 2, 2, 2, 2, 2, 2, 2 ],
+        locations   : [
+            {
+                coords   : [ 180, 270 ],
+                location : "Chão da despensa",
+                room     : 2,
+                units    : 7,
+            },
+        ],
     },
     {
         description : "Post-It &reg; (caixa de 200)",
@@ -83,15 +68,14 @@ var stocks = [
         picture     : "post-it.png",
         icon        : "post-it-icon.png",
         categories  : [ "escritório" ],
-        coords      : [
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	],
-        location    : [
-	    "Chão da despensa",
-	    "Chão da despensa",
-	],
-        room	    : [ 2, 2 ],
+        locations   : [
+            {
+                coords   : [ 180, 270 ],
+                location : "Chão da despensa",
+                room     : 2,
+                units    : 2,
+            },
+        ],
     },
     {
         description : "Tinteiro para impressora",
@@ -99,31 +83,14 @@ var stocks = [
         picture     : "cartridge.png",
         icon        : "cartridge-icon.png",
         categories  : [ "escritório", "impressora" ],
-        coords      : [
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	    [ 180, 270 ],
-	],
-        location    : [
-	    "Chão da despensa",
-	    "Chão da despensa",
-	    "Chão da despensa",
-	    "Chão da despensa",
-	    "Chão da despensa",
-	    "Chão da despensa",
-	    "Chão da despensa",
-	    "Chão da despensa",
-	    "Chão da despensa",
-	    "Chão da despensa",
-	],
-        room	    : [ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ],
+        locations   : [
+            {
+                coords   : [ 180, 270 ],
+                location : "Chão da despensa",
+                room     : 2,
+                units    : 10,
+            },
+        ],
     },
 ];
 
@@ -181,7 +148,7 @@ function stockOverlayFill(o, id) {
 
 
 function stockShowLocation(attrs) {
-    if (!attrs.coords) return;
+    if (!attrs.locations || attrs.locations.length == 0) return;
     stocksLocate = attrs.description;
     incrSearchUpdate();
     switchState("object");

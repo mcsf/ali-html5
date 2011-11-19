@@ -118,14 +118,18 @@ $(document).ready(function() {
             v.stocks = true;
             createStockItem(v);
 
-            /* Push into `objects' every instance of each item in `stocks' */
-            for (j = 0; j < v.units; j++) {
-                var newAttrs      = $.extend(true, {}, v);
-                newAttrs.coords   = v.coords[j];
-                newAttrs.location = v.location[j];
-                newAttrs.room     = v.room[j];
-                objects.push(newAttrs);
-            }
+            /* Push into `objects' each location of a stocks item */
+	    if (v.locations) {
+		$.each(v.locations, function(j,w) {
+		    var newAttrs       = $.extend(true, {}, v);
+		    newAttrs.coords    = w.coords;
+		    newAttrs.location  = w.location;
+		    newAttrs.room      = w.room;
+		    newAttrs.units     = w.units;
+		    newAttrs.locations = undefined;
+		    objects.push(newAttrs);
+		});
+	    }
         });
         objects.sort(objectCmp);
         $.each(objects, function(i,v) { v.id = i; createItem(v); });

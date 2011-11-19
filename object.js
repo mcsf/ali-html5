@@ -87,7 +87,9 @@ var roomColors = {
 
 /* Object list item generation */
 function createItem(attrs) {
-    $("#itemlist").append($('<div class="item selectable"> <span class="icon"> <img src="objects/' + attrs.icon + '"/> </span> <div class="text"> <span class="description">' + attrs.description + '</span> <span class="Location">' + attrs.location + '</span> <input type="hidden" class="roomNo" value="' + attrs.room + '"/> <input type="hidden" class="id" value="' + attrs.id + '"/> </div> </div>').css("opacity", "0.2"));
+    var units = attrs.units ? " (" + attrs.units + " uds.)" : "";
+
+    $("#itemlist").append($('<div class="item selectable"> <span class="icon"> <img src="objects/' + attrs.icon + '"/> </span> <div class="text"> <span class="description">' + attrs.description + '</span> <span class="location">' + attrs.location + units + '</span> <input type="hidden" class="roomNo" value="' + attrs.room + '"/> <input type="hidden" class="id" value="' + attrs.id + '"/> </div> </div>').css("opacity", "0.2"));
 };
 
 
@@ -95,7 +97,7 @@ function createItem(attrs) {
 function itemOverlayFill(o, id) {
     var attrs = objects[id];
     o.find(".picture").attr("src", "objects/" + attrs.picture);
-    o.find(".description").text(attrs.description);
+    o.find(".description").html(attrs.description);
     o.find(".location").append(attrs.location);
     o.find(".info").text(attrs.info);
     $.each(attrs.categories, function(i,v) {
