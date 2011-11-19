@@ -87,6 +87,11 @@ function incrSearchUpdate() {
         }
     });
 
+    /* Don't grey out if room is selected, even if empty */
+    $.each(labels, function(i,v) {
+	if (labels[i]) delete inactiveRooms[i];
+    });
+
     $.each(inactiveRooms, function(i,v) {
         fillRoom({ roomValue: v, style: gray });
     });
