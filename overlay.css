@@ -158,3 +158,34 @@ button {
     right    : 0px;
     bottom   : 0px;
 }
+
+.notifier {
+    visibility  : hidden;
+    display     : table;
+    position    : fixed;
+    z-index     : 2;
+    width       : 200px;
+    height      : 44px;
+    left        : 412px;
+    top         : 302px;
+    overflow    : hidden;
+    text-align  : center;
+    background  : url('layout/nav-button-sel.png');
+    border      : 1px solid black;
+    color       : white;
+    font-weight : bold;
+}
+
+.notifier p {
+    display        : table-cell;
+    vertical-align : middle;
+    margin         : 0px;
+}
+
+.notifier.right {
+    left          : 562px;
+}
+
+.notifier.right p {
+    position : relative;
+}

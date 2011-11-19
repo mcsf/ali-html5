@@ -40,3 +40,15 @@ function deleteOverlay() {
 function deleteOverlayOnEscape(event) {
     if (event.which == 27) deleteOverlay();
 };
+
+function notify(msg) {
+    var o = $('<div class="notifier"><p></p></div>');
+
+    $("#nav_and_body").append(o);
+
+    if ($(".overlay").length > 0) o.addClass("right");
+    o.find("p").text(msg);
+    o.css("visibility", "visible").show().fadeOut(2000);
+
+    setTimeout(function() { o.remove(); }, 5000);
+};

@@ -138,6 +138,7 @@ function stockOverlayFill(o, id) {
     o.find("input:checkbox")
         .click(function() {
             stocks[id].manage = !stocks[id].manage;
+            notify("A sua alteração foi registada.");
             stockSearchUpdate();
         })
         .attr("checked", stocks[id].manage);
