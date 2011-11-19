@@ -176,6 +176,11 @@ body {
     font-size : 16pt;
 }
 
+#stocksView {
+    position : relative;
+    left     : -40px;
+}
+
 #incr_search_clear, #stock_search_clear {
     position : relative;
     top      : 13px;
@@ -186,7 +191,7 @@ body {
 
 canvas {
     position : absolute;
-    top      : 20px;
+    top      : 100px;
     right    : 6px;
     width    : 270px;
     height   : 660px;

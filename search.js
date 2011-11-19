@@ -59,7 +59,7 @@ function incrSearchUpdate() {
             return;
         }
 
-        if (attrs.stocks) {
+        if (!stocksView && attrs.stocks) {
             $(this).hide();
             return;
         }

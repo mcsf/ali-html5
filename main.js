@@ -18,6 +18,7 @@ var stateNames = {
 };
 
 var stocksLocate;
+var stocksView;
 
 /**
  * Debug
@@ -186,6 +187,12 @@ $(document).ready(function() {
             if ($(this).css("cursor") != "pointer") return;
             var id = $(this).find(".id").val();
             createOverlay(id, "#overlay_template", itemOverlayFill);
+        });
+
+        /* Toggle Stocks filter in Object search */
+        $("#stocksView").find("input:checkbox").click(function() {
+            stocksView = !stocksView;
+            incrSearchUpdate();
         });
 
 
