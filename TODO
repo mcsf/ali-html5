@@ -14,6 +14,8 @@
 --- Procura String
 # Consultar http://slides.html5rocks.com/#new-form-types
 - Oferecer possib. encontrar bens consumíveis
+- Distinguir tipos de objs, ex. livro / DVD / etc
+- Possibil. ver também artigos de stock
 @ Zoom no Overlay?
 
 --- Procura Mapa
@@ -22,7 +24,11 @@
 @ Clicar nos ícones do mapa para seleccionar objs (difícil)
 
 --- Stocks
+- Talvez tornar mais claro que Alim/Escr/Limp se aplicam SÓ a Stocks
 - Diferentes localizações: mais compreensível; numeradas?
+- Tooltip para retardados que avisa que se trocou de Escritório p/ Obj
+- Botão de regresso a Stocks quando se Vê Localiz.
+- Confirmação não-invasiva de que se (des)marcou a checkbox
 
 --- Novas Tarefas
 - Integrar uma vista dos artigos auto-geridos
