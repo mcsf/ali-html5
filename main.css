@@ -223,7 +223,18 @@ canvas {
 }
 
 #itemlist > .item > .icon > img {
-    width : 59px;
+    position : relative;
+    top      : 2px;
+    width    : 59px;
+}
+
+#itemlist > .item .kind {
+    font-weight   : normal;
+    background    : #eee;
+    border-radius : 5px;
+    padding-left  : 2px;
+    padding-right : 2px;
+    margin-right  : 6px;
 }
 
 #itemlist > .item > .text {
@@ -237,10 +248,13 @@ canvas {
 
 #itemlist > .item .description {
     position    : absolute;
-    width       : 337px;
+    width       : 327px;
     height      : 37px;
     font-weight : bold;
     margin-top  : 6px;
+    white-space : nowrap;
+    overflow    : hidden;
+    text-overflow : ellipsis;
 }
 
 #itemlist > .item .location {

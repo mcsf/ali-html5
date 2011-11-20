@@ -44,16 +44,29 @@ var objects = [
         info        : "Arrumado a 9 de Outubro",
         picture     : "zarathustra.png",
         categories  : [ "livros" ],
+        kind        : "livro",
     },
     {
-        icon        : "question-icon.png",
-        description : "Objecto não identificado",
+        icon        : "lotr-movie-icon.png",
+        description : "Lord of the Rings: Fellowship of the Ring",
         location    : "Chão da sala",
-        coords      : [ 15, 410 ],
+        coords      : [ 68, 375 ],
         room        : 1,
-        info        : "Arrumado a 9 de Outubro",
-        picture     : "question.png",
-        categories  : [ "não-identificado" ],
+        info        : "Arrumado a 20 de Novembro",
+        picture     : "lotr-movie.png",
+        categories  : [ "filmes", "dvd" ],
+        kind        : "filme",
+    },
+    {
+        icon        : "lotr-book-icon.png",
+        description : "Lord of the Rings: Fellowship of the Ring",
+        location    : "Chão da sala",
+        coords      : [ 48, 405 ],
+        room        : 1,
+        info        : "Arrumado a 20 de Novembro",
+        picture     : "lotr-book.png",
+        categories  : [ "livros" ],
+        kind        : "livro",
     },
 ];
 
@@ -87,9 +100,10 @@ var roomColors = {
 
 /* Object list item generation */
 function createItem(attrs) {
+    var kind  = attrs.kind  ? "<span class=\"kind\">" + attrs.kind + "</span>" : "";
     var units = attrs.units ? " (" + attrs.units + " uds.)" : "";
 
-    $("#itemlist").append($('<div class="item selectable"> <span class="icon"> <img src="objects/' + attrs.icon + '"/> </span> <div class="text"> <span class="description">' + attrs.description + '</span> <span class="location">' + attrs.location + units + '</span> <input type="hidden" class="roomNo" value="' + attrs.room + '"/> <input type="hidden" class="id" value="' + attrs.id + '"/> </div> </div>').css("opacity", "0.2"));
+    $("#itemlist").append($('<div class="item selectable"> <span class="icon"> <img src="objects/' + attrs.icon + '"/></span> <div class="text"><span class="description">'+kind+attrs.description + '</span> <span class="location">' + attrs.location + units + '</span> <input type="hidden" class="roomNo" value="' + attrs.room + '"/> <input type="hidden" class="id" value="' + attrs.id + '"/> </div> </div>').css("opacity", "0.2"));
 };
 
 
