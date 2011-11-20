@@ -44,7 +44,7 @@ var objects = [
         info        : "Arrumado a 9 de Outubro",
         picture     : "zarathustra.png",
         categories  : [ "livros" ],
-        kind        : "livro",
+        kind        : 'book',
     },
     {
         icon        : "lotr-movie-icon.png",
@@ -55,7 +55,7 @@ var objects = [
         info        : "Arrumado a 20 de Novembro",
         picture     : "lotr-movie.png",
         categories  : [ "filmes", "dvd" ],
-        kind        : "filme",
+        kind        : 'film',
     },
     {
         icon        : "lotr-book-icon.png",
@@ -66,7 +66,7 @@ var objects = [
         info        : "Arrumado a 20 de Novembro",
         picture     : "lotr-book.png",
         categories  : [ "livros" ],
-        kind        : "livro",
+        kind        : 'book',
     },
 ];
 
@@ -97,11 +97,22 @@ var roomColors = {
     3 : "#978cea",
 };
 
+var kinds = {
+    book : { name  : "Livro", color : "#fdd", },
+    film : { name  : "Filme", color : "#ddf", },
+};
 
 /* Object list item generation */
 function createItem(attrs) {
-    var kind  = attrs.kind  ? "<span class=\"kind\">" + attrs.kind + "</span>" : "";
     var units = attrs.units ? " (" + attrs.units + " uds.)" : "";
+    var kind  = "";
+
+    if (attrs.kind) {
+        console.log(attrs.kind);
+        kind = '<span class="kind" style="background:'
+                + kinds[attrs.kind].color
+                + '">' + kinds[attrs.kind].name + "</span>";
+    }
 
     $("#itemlist").append($('<div class="item selectable"> <span class="icon"> <img src="objects/' + attrs.icon + '"/></span> <div class="text"><span class="description">'+kind+attrs.description + '</span> <span class="location">' + attrs.location + units + '</span> <input type="hidden" class="roomNo" value="' + attrs.room + '"/> <input type="hidden" class="id" value="' + attrs.id + '"/> </div> </div>').css("opacity", "0.2"));
 };

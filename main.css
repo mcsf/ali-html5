@@ -229,7 +229,8 @@ canvas {
 }
 
 #itemlist > .item .kind {
-    font-weight   : normal;
+    font-weight   : bold;
+    color         : #60666f;
     background    : #eee;
     border-radius : 5px;
     padding-left  : 2px;
