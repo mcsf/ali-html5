@@ -48,7 +48,7 @@ function notify(msg) {
 
     if ($(".overlay").length > 0) o.addClass("right");
     o.find("p").text(msg);
-    o.css("visibility", "visible").show().fadeOut(2000);
+    o.css("visibility", "visible").show().fadeOut(1000);
 
     setTimeout(function() { o.remove(); }, 5000);
 };

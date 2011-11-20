@@ -160,20 +160,21 @@ button {
 }
 
 .notifier {
-    visibility  : hidden;
-    display     : table;
-    position    : fixed;
-    z-index     : 2;
-    width       : 200px;
-    height      : 44px;
-    left        : 412px;
-    top         : 302px;
-    overflow    : hidden;
-    text-align  : center;
-    background  : url('layout/nav-button-sel.png');
-    border      : 1px solid black;
-    color       : white;
-    font-weight : bold;
+    visibility    : hidden;
+    display       : table;
+    position      : fixed;
+    z-index       : 2;
+    width         : 200px;
+    height        : 44px;
+    left          : 562px;
+    top           : 302px;
+    overflow      : hidden;
+    text-align    : center;
+    background    : url('layout/nav-button-sel.png');
+    border        : 1px solid black;
+    border-radius : 10px;
+    color         : white;
+    font-weight   : bold;
 }
 
 .notifier p {
@@ -182,10 +183,10 @@ button {
     margin         : 0px;
 }
 
-.notifier.right {
-    left          : 562px;
+.notifier.center {
+    left        : 412px;
 }
 
-.notifier.right p {
+.notifier.center p {
     position : relative;
 }

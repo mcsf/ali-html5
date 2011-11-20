@@ -108,7 +108,6 @@ function createItem(attrs) {
     var kind  = "";
 
     if (attrs.kind) {
-        console.log(attrs.kind);
         kind = '<span class="kind" style="background:'
                 + kinds[attrs.kind].color
                 + '">' + kinds[attrs.kind].name + "</span>";
