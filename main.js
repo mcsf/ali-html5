@@ -227,6 +227,19 @@ $(document).ready(function() {
             createOverlay(id, "#stock_overlay_template", stockOverlayFill);
         });
 
+        $("#stocklist > .stock .isManaged").click(function(e) {
+            e.stopPropagation();
+        });
+
+        /* Mark an item for stocks management */
+        $("#stocklist > .stock .isManaged input").click(function(e) {
+            e.stopPropagation();
+            var id = $(this).parents(".stock").find(".id").val();
+            var m  = stocks[id].manage = !stocks[id].manage;
+            notify("A sua alteração foi registada.");
+            stockSearchUpdate();
+        });
+
         /* DEBUG */
 
         $("#debug > h3:first a").click(debugToggle);

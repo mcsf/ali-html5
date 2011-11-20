@@ -326,8 +326,16 @@ canvas {
 }
 
 #stocklist > .stock > .isManaged {
-    top     : 10px;
-    left    : 510px;
+    top     : 1px;
+    left    : 500px;
+    width   : 50px;
+    height  : 38px;
+}
+
+#stocklist > .stock > .isManaged input {
+    position : relative;
+    left     : 12px;
+    top      : 9px;
 }
 
 #stocklist > .stock > .units {
@@ -382,9 +390,9 @@ canvas {
 }
 
 #stockheader .isManaged {
-    left : 430px;
+    left : 400px;
 }
 
 #stockheader .units {
-    left : 496px;
+    left : 446px;
 }
