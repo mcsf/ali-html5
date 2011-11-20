@@ -29,7 +29,8 @@ function createOverlay(id, template, fillFn) {
     }, 100);
 };
 
-function deleteOverlay() {
+function deleteOverlay(e) {
+    e.stopPropagation();
     $(".selectable").not("input").css("cursor", "pointer");
     $("input.selectable").removeAttr("disabled");
     $(".overlay").remove();
