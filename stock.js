@@ -140,6 +140,7 @@ function stockOverlayFill(o, id) {
             stocks[id].manage = !stocks[id].manage;
             notify("A sua alteração foi registada.");
             stockSearchUpdate();
+            deleteOverlay()
         })
         .attr("checked", stocks[id].manage);
     o.find(".b_locate").click(function() {

@@ -8,7 +8,7 @@ function createOverlay(id, template, fillFn) {
     o.appendTo("body").addClass("overlay").css("display", "inline");
 
     /* Clicking on its close button deletes it */
-    o.find(".close").click(function() { deleteOverlay(); });
+    o.find(".close").click(function(e) { deleteOverlay(e); });
 
     /* Hitting "Escape" will do the same */
     $(document).keydown(deleteOverlayOnEscape);
@@ -30,7 +30,7 @@ function createOverlay(id, template, fillFn) {
 };
 
 function deleteOverlay(e) {
-    e.stopPropagation();
+    if (e) e.stopPropagation();
     $(".selectable").not("input").css("cursor", "pointer");
     $("input.selectable").removeAttr("disabled");
     $(".overlay").remove();
@@ -39,7 +39,7 @@ function deleteOverlay(e) {
 };
 
 function deleteOverlayOnEscape(event) {
-    if (event.which == 27) deleteOverlay();
+    if (event.which == 27) deleteOverlay(event);
 };
 
 function notify(msg) {
