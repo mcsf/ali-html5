@@ -145,7 +145,6 @@ function stockOverlayFill(o, id) {
             $("#stocklist .stock").eq(id)
                 .find(".isManaged input").attr('checked', m);
             stockSearchUpdate();
-            deleteOverlay()
         })
         .attr("checked", stocks[id].manage);
     o.find(".b_locate").click(function() {
