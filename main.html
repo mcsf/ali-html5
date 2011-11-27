@@ -1,32 +1,44 @@
+<!DOCTYPE html>
+
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" href="overlay.css" type="text/css" />
-        <link rel="stylesheet" href="debug.css" type="text/css" />
-        <link rel="stylesheet" href="main.css" type="text/css" />
-        <script src="lib/jquery-1.6.4.min.js"></script>
-        <script src="lib/kinetic2d-v1.0.5.js"></script>
-        <script src="object.js"></script>
-        <script src="stock.js"></script>
-        <script src="search.js"></script>
-        <script src="canvas.js"></script>
-        <script src="overlay.js"></script>
-        <script src="help.js"></script>
-        <script src="debug.js"></script>
-        <script src="main.js"></script>
+        <meta charset='utf-8'>
+        <link rel="stylesheet" href="overlay.css" type="text/css">
+        <link rel="stylesheet" href="debug.css" type="text/css">
+        <link rel="stylesheet" href="main.css" type="text/css">
+        <noscript>
+            <link rel="stylesheet" href="noscript.css" type="text/css">
+        </noscript>
+        <script type="text/javascript" src="lib/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="lib/kinetic2d-v1.0.5.js"></script>
+        <script type="text/javascript" src="object.js"></script>
+        <script type="text/javascript" src="stock.js"></script>
+        <script type="text/javascript" src="search.js"></script>
+        <script type="text/javascript" src="canvas.js"></script>
+        <script type="text/javascript" src="overlay.js"></script>
+        <script type="text/javascript" src="help.js"></script>
+        <script type="text/javascript" src="debug.js"></script>
+        <script type="text/javascript" src="main.js"></script>
 
         <title>ALI</title>
     </head>
 
     <body>
 
-        <!-- CONTORNO FÍSICO DO IPAD (desligado no CSS) -->
+        <noscript>
+            <h2>
+                Deve permitir a execução de JavaScript por parte do seu navegador.
+            </h2>
+        </noscript>
+
+        <!-- CONTORNO FÍSICO DO IPAD (desligado)
         <div id="frame">
-            <img src="layout/frame.png" border="0" usemap="#m_frame" />
-            <map id="m_frame">
-                <area shape="rect" coords="0,0,0,0" href="#" />
+            <img src="layout/frame.png" style="border:0" usemap="#m_frame" alt="">
+            <map name="m_frame">
+                <area shape="rect" coords="0,0,0,0" href="#">
             </map>
         </div>
+        -->
 
         <div id="app">
 
@@ -37,12 +49,12 @@
 		<div id="state">
 		    <span id="state_text">Objecto</span>
 		    <span id="help" class="state_icon selectable">
-			<img src="layout/icon-help.svg"/>
-			<p>Ajuda</p>
+			<img src="layout/icon-help.svg" alt="">
+			<span>Ajuda</span>
 		    </span>
 		    <span id="logout" class="state_icon selectable">
-			<img src="layout/icon-logout.svg"/>
-			<p>Sair</p>
+			<img src="layout/icon-logout.svg" alt="">
+			<span>Sair</span>
 		    </span>
 		</div>
             </div>
@@ -57,12 +69,12 @@
                     </div>
 
                     <div class="nav_button selectable enabled" id="nav_object">
-                        <span class="icon"><img src="layout/icon-search.svg"/></span>
+                        <span class="icon"><img src="layout/icon-search.svg" alt=""></span>
                         <span class="text">Objecto</span>
                     </div>
 
                     <div class="nav_button selectable">
-                        <span class="icon"><img src="layout/icon-categories.svg"/></span>
+                        <span class="icon"><img src="layout/icon-categories.svg" alt=""></span>
                         <span class="text">Categorias</span>
                     </div>
 
@@ -72,17 +84,17 @@
                     </div>
 
                     <div class="nav_button selectable">
-                        <span class="icon"><img src="layout/icon-food.svg"/></span>
+                        <span class="icon"><img src="layout/icon-food.svg" alt=""></span>
                         <span class="text">Alimentação</span>
                     </div>
 
                     <div class="nav_button selectable enabled" id="nav_office">
-                        <span class="icon"><img src="layout/icon-office.svg"/></span>
+                        <span class="icon"><img src="layout/icon-office.svg" alt=""></span>
                         <span class="text">Escritório</span>
                     </div>
 
                     <div class="nav_button selectable">
-                        <span class="icon"><img src="layout/icon-cleanup.svg"/></span>
+                        <span class="icon"><img src="layout/icon-cleanup.svg" alt=""></span>
                         <span class="text">Limpeza</span>
                     </div>
 
@@ -92,18 +104,18 @@
                     </div>
 
                     <div class="nav_button selectable">
-                        <span class="icon"><img src="layout/icon-new.svg"/></span>
+                        <span class="icon"><img src="layout/icon-new.svg" alt=""></span>
                         <span class="text">2 novos objectos</span>
                     </div>
 
                     <div class="nav_button selectable enabled" id="nav_office_u">
-                        <span class="icon"><img src="layout/icon-urgent.svg"/></span>
+                        <span class="icon"><img src="layout/icon-urgent.svg" alt=""></span>
                         <span class="text">1 artigo esgotado</span>
                         <input type="hidden" value="Artigos esgotados"/>
                     </div>
 
                     <div class="nav_button selectable enabled" id="nav_office_w">
-                        <span class="icon"><img src="layout/icon-warning.svg"/></span>
+                        <span class="icon"><img src="layout/icon-warning.svg" alt=""></span>
                         <span class="text">3 artigos em fim de stock</span>
                         <input type="hidden" value="Artigos em fim de stock"/>
                     </div>
@@ -111,8 +123,8 @@
                 </div>
 
                 <div id="overlay_template">
-                    <img class="close selectable" src="layout/close.png"/>
-                    <img class="picture" src="objects/chaves_casa.png"/>
+                    <img class="close selectable" src="layout/close.png" alt="">
+                    <img class="picture" src="objects/chaves_casa.png" alt="">
                     <p class="description"></p>
                     <p class="location">
                         <b>Localização</b>
@@ -126,8 +138,8 @@
                 </div>
 
                 <div id="stock_overlay_template">
-                    <img class="close selectable" src="layout/close.png"/>
-                    <img class="picture" src="objects/question.png"/>
+                    <img class="close selectable" src="layout/close.png" alt="">
+                    <img class="picture" src="objects/question.png" alt="">
                     <p class="description"></p>
                     <p class="units">
                         <b>Stock</b>
@@ -148,14 +160,14 @@
                 </div>
 
                 <div id="help_overlay_template">
-                    <img class="close selectable" src="layout/close.png"/>
+                    <img class="close selectable" src="layout/close.png" alt="">
                     <p class="help title"></p>
                     <p class="help contents"></p>
                 </div>
 
                 <!-- NA for Not Available -->
                 <div id="na_overlay_template">
-                    <img class="close selectable" src="layout/close.png"/>
+                    <img class="close selectable" src="layout/close.png" alt="">
                     <p class="na">Funcionalidade não implementada.</p>
                 </div>
 
@@ -165,15 +177,15 @@
                     </div>
 
                     <div id="body_object">
-                        <p>
+                        <div class="search">
                             <input type="text" id="incr_search" class="selectable" />
-                            <img id="incr_search_clear" class="selectable" src="layout/erase.png" />
+                            <img id="incr_search_clear" class="selectable" src="layout/erase.png"  alt="">
                             <span id="stocksView">
                                 <input type="checkbox"/>
                                 Incluir bens consumíveis na procura
                             </span>
                             <div id="labels"></div>
-                        </p>
+                        </div>
 
                         <div id="itemlist"></div>
 
@@ -184,7 +196,7 @@
                     <div id="body_office">
                         <p>
                             <input type="text" id="stock_search" class="selectable" />
-                            <img id="stock_search_clear" class="selectable" src="layout/erase.png" />
+                            <img id="stock_search_clear" class="selectable" src="layout/erase.png"  alt="">
                         </p>
 
                         <div id="stocklist">
@@ -222,7 +234,7 @@
 
                 </div>
 
-		<img id="keyboard" src="layout/keyboard.png"/>
+		<img id="keyboard" src="layout/keyboard.png" alt="">
 
             </div>
 

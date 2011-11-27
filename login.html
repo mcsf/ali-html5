@@ -1,18 +1,29 @@
+<!DOCTYPE html>
+
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" href="overlay.css" type="text/css" />
-        <link rel="stylesheet" href="debug.css" type="text/css" />
-        <link rel="stylesheet" href="login.css" type="text/css" />
-        <script src="lib/jquery-1.6.4.min.js"></script>
-        <script src="overlay.js"></script>
-        <script src="help.js"></script>
-        <script src="debug.js"></script>
-        <script src="login.js"></script>
+        <meta charset='utf-8'>
+        <link rel="stylesheet" href="overlay.css" type="text/css">
+        <link rel="stylesheet" href="debug.css" type="text/css">
+        <link rel="stylesheet" href="login.css" type="text/css">
+        <noscript>
+            <link rel="stylesheet" href="noscript.css" type="text/css">
+        </noscript>
+        <script type="text/javascript" src="lib/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="overlay.js"></script>
+        <script type="text/javascript" src="help.js"></script>
+        <script type="text/javascript" src="debug.js"></script>
+        <script type="text/javascript" src="login.js"></script>
         <title>ALI</title>
     </head>
 
     <body>
+
+        <noscript>
+            <h2>
+                Deve permitir a execução de JavaScript por parte do seu navegador.
+            </h2>
+        </noscript>
 
         <div id="bg">
 
@@ -23,31 +34,31 @@
                     <p class="title">Iniciar</p>
                     <div class="void"></div>
                     <div class="user">
-                        <img src="layout/user.png"/>
+                        <img src="layout/user.png" alt="">
                         <p>Guilherme</p>
                     </div>
                     <div class="user">
-                        <img src="layout/user.png"/>
+                        <img src="layout/user.png" alt="">
                         <p>Miguel</p>
                     </div>
                     <div class="user">
-                        <img src="layout/user.png"/>
+                        <img src="layout/user.png" alt="">
                         <p>Pedro</p>
                     </div>
                     <div class="new">
-                        <img src="layout/user-new.png"/>
+                        <img src="layout/user-new.png" alt="">
                         <p>Novo utilizador</p>
                     </div>
                 </div>
             </div>
 
             <div id="prefs">
-                <img src="layout/prefs.svg"/>
+                <img src="layout/prefs.svg" alt="">
                 <p>Preferências</p>
             </div>
 
             <div id="help">
-                <img src="layout/icon-help.svg"/>
+                <img src="layout/icon-help.svg" alt="">
                 <p>Ajuda</p>
             </div>
 
@@ -60,23 +71,23 @@
             <p><a class="keyboard" href="#">Teclado</a></p>
         </div>
 
-	<img id="keyboard" src="layout/keyboard.png"/>
+	<img id="keyboard" src="layout/keyboard.png" alt="">
 
         <div id="hidden">
             <div class="prompt">
-                <img src="layout/void-pixel.png"/>
-                <input type="text" action="login.html" value="Insira palavra-passe..."/>
+                <img src="layout/void-pixel.png" alt="">
+                <input type="text" value="Insira palavra-passe...">
             </div>
 
             <div id="help_overlay_template">
-                <img class="close selectable" src="layout/close.png"/>
+                <img class="close selectable" src="layout/close.png" alt="">
                 <p class="help title"></p>
                 <p class="help contents"></p>
             </div>
 
 	    <!-- NA for Not Available -->
 	    <div id="na_overlay_template">
-		<img class="close selectable" src="layout/close.png"/>
+		<img class="close selectable" src="layout/close.png" alt="">
 		<p class="na">Funcionalidade não implementada.</p>
 	    </div>
 

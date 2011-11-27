@@ -81,9 +81,9 @@ body {
     height   : 26px;
 }
 
-.state_icon > p {
+.state_icon > span {
     position    : relative;
-    top         : -14px;
+    top         : -15px;
     font-size   : 10pt;
     height      : 12px;
 }
@@ -168,6 +168,11 @@ body {
     position : absolute;
     top      : 10px;
     left     : 44px;
+}
+
+.search {
+    position : relative;
+    top      : 16px;
 }
 
 #incr_search, #stock_search {
