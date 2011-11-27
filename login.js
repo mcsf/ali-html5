@@ -12,14 +12,13 @@ $(document).ready(function() {
     /* Preferences option is not implemented */
     $("#prefs").click(notImplemented);
 
-    $(".user").add(".new").click(function() {
-	$("#login .prompt").remove();
+    $(".user").click(function() {
+	$("#login .prompt").add("#login .create").remove();
 
-	$(this).after(
-	    $("#hidden > .prompt").clone().fadeIn("slow"));
+	$(this).after($("#hidden > .prompt").clone().fadeIn("slow"));
 
-	$("input:text").focus().keydown(function(e) {
-	    var pw = $('<input type="password" />');
+	$("input.pwd:text").focus().keydown(function(e) {
+	    var pw = $('<input type="password">');
 	    $(this).replaceWith(pw);
 	    pw.focus().keypress(function(e) {
 		if (e.which == 13)
@@ -28,6 +27,30 @@ $(document).ready(function() {
 
 	});
 
+    });
+
+    $(".new").click(function() {
+	$("#login .prompt").add("#login .create").remove();
+
+	$(this).after($("#hidden > .create").clone().fadeIn("slow"));
+
+        $("input.usr").focus().keydown(function(e) {
+            var usr = $('<input type="text">');
+            $(this).replaceWith(usr);
+            usr.focus().keypress(function(e) {
+		if (e.which == 13) {
+                    $(this).parent().after($("#hidden > .prompt").clone());
+                    $("input.pwd:text").focus().keydown(function(e) {
+                        var pw = $('<input type="password">');
+                        $(this).replaceWith(pw);
+                        pw.focus().keypress(function(e) {
+                            if (e.which == 13)
+                                window.location = "main.html";
+                        });
+                    });
+                }
+	    });
+        });
     });
 
 
