@@ -13,6 +13,11 @@ body {
     background-color : #e2e3e8;
 }
 
+#bg.pan {
+    position : relative;
+    top : -150px;
+}
+
 #hidden, .template {
     display : none;
 }

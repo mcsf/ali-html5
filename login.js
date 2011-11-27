@@ -49,6 +49,7 @@ $(document).ready(function() {
     $("#debug > h3:first a").click(debugToggle);
     $("#debug").find(".keyboard").click(function() {
 	$("#keyboard").toggle();
+        $("#bg").toggleClass("pan");
     });
 
 });
