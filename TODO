@@ -20,6 +20,7 @@
 @ Clicar nos ícones do mapa para seleccionar objs (difícil)
 
 --- Stocks
+- Evitar erros: zona de clique maior à volta das checkboxes
 - Talvez tornar mais claro que Alim/Escr/Limp se aplicam SÓ a Stocks
 - Tooltip para retardados que avisa que se trocou de Escritório p/ Obj
 - Botão de regresso a Stocks quando se Vê Localiz.
