@@ -5,17 +5,11 @@
 var stocks = [
     {
         description : "Agrafos (caixa de 100)",
-        units       : 4,
+        units       : 3,
         picture     : "staples.png",
         icon        : "staples-icon.png",
         categories  : [ "escritório" ],
         locations   : [
-            {
-                coords   : [ 180, 270 ],
-                location : "Chão da despensa",
-                room     : 2,
-                units    : 1,
-            },
             {
                 coords   : [ 220, 290 ],
                 location : "Cómoda da despensa",
@@ -49,7 +43,7 @@ var stocks = [
     },
     {
         description : "Papel para impressora (maço de 50)",
-        units       : 7,
+        units       : 5,
         picture     : "paper.png",
         icon        : "paper-icon.png",
         categories  : [ "escritório", "impressora" ],
@@ -58,7 +52,13 @@ var stocks = [
                 coords   : [ 180, 270 ],
                 location : "Chão da despensa",
                 room     : 2,
-                units    : 7,
+                units    : 1,
+            },
+            {
+                coords   : [ 220, 290 ],
+                location : "Cómoda da despensa",
+                room     : 2,
+                units    : 4,
             },
         ],
     },
