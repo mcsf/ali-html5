@@ -51,6 +51,7 @@ function incrSearchUpdate() {
                 if (!attrs.imgObj) {
                     attrs.imgObj     = new Image();
                     attrs.imgObj.src = "objects/" + attrs.icon;
+                    attrs.imgObj.alt = "";
                 }
                 ctx.drawImage(attrs.imgObj, attrs.coords[0], attrs.coords[1],
                     45, 45);
@@ -78,6 +79,7 @@ function incrSearchUpdate() {
             if (!attrs.imgObj) {
                 attrs.imgObj     = new Image();
                 attrs.imgObj.src = "objects/" + attrs.icon;
+                attrs.imgObj.alt = "";
             }
             ctx.drawImage(attrs.imgObj, attrs.coords[0], attrs.coords[1],
                 45, 45);

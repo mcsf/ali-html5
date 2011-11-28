@@ -123,7 +123,7 @@ function renderUnits(n) {
 
 /* Stock list item generation */
 function createStockItem(attrs) {
-    $("#stocklist").append($('<div class="stock selectable"> <img src="objects/' + attrs.icon + '"/> <span class="description">' + attrs.description + '</span>' + '<span class="isManaged"><input type="checkbox"' + (attrs.manage ? ' checked="checked"' : '') + '/></span>' + renderUnits(attrs.units) + '<input type="hidden" class="id" value="' + attrs.id + '"/></div>'));
+    $("#stocklist").append($('<div class="stock selectable"> <img alt="" src="objects/' + attrs.icon + '"> <span class="description">' + attrs.description + '</span>' + '<span class="isManaged"><input type="checkbox"' + (attrs.manage ? ' checked="checked"' : '') + '></span>' + renderUnits(attrs.units) + '<input type="hidden" class="id" value="' + attrs.id + '"></div>'));
 };
 
 

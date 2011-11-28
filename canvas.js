@@ -58,7 +58,7 @@ function roomClickHandler(i) {
             '<span class="label" style="background-color:'
             + roomColors[i] + ';">' + roomNames[i]
             + '&nbsp;<a>&nbsp;X</a><input type="hidden" value="'
-            + i + '"/></span>'
+            + i + '"></span>'
         );
 
         /* Clicking on the label's cross deletes it */

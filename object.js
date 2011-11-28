@@ -113,7 +113,7 @@ function createItem(attrs) {
                 + '">' + kinds[attrs.kind].name + "</span>";
     }
 
-    $("#itemlist").append($('<div class="item selectable"> <span class="icon"> <img src="objects/' + attrs.icon + '"/></span> <div class="text"><span class="description">'+kind+attrs.description + '</span> <span class="location">' + attrs.location + units + '</span> <input type="hidden" class="roomNo" value="' + attrs.room + '"/> <input type="hidden" class="id" value="' + attrs.id + '"/> </div> </div>').css("opacity", "0.2"));
+    $("#itemlist").append($('<div class="item selectable"> <span class="icon"> <img alt="" src="objects/' + attrs.icon + '"></span> <div class="text"><span class="description">'+kind+attrs.description + '</span> <span class="location">' + attrs.location + units + '</span> <input type="hidden" class="roomNo" value="' + attrs.room + '"> <input type="hidden" class="id" value="' + attrs.id + '"> </div> </div>').css("opacity", "0.2"));
 };
 
 
