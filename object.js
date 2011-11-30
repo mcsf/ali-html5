@@ -104,9 +104,16 @@ var kinds = {
 
 /* Object list item generation */
 function createItem(attrs) {
-    var units = attrs.units ? " (" + attrs.units + " uds.)" : "";
-    var kind  = "";
+    var units = '';
+    if (attrs.units) {
+        units = ' ('
+                + attrs.units
+                + ' ud'
+                + (attrs.units != 1 ? 's' : '')
+                + '.)';
+    }
 
+    var kind  = '';
     if (attrs.kind) {
         kind = '<span class="kind" style="background:'
                 + kinds[attrs.kind].color
@@ -129,4 +136,16 @@ function itemOverlayFill(o, id) {
             '&nbsp;<span class="category selectable">'
             + v + '</span>\n');
     });
+
+    if (attrs.stocksId !== undefined) {
+        var s = (attrs.units != 1) ? 's' : '';
+        o.find('.info').text(attrs.units + ' unidade'+s+' nesta localização');
+        o.append('<button class="b_stocks">Gerir Stocks</button>');
+        o.find('.b_stocks').click(function() {
+            deleteOverlay();
+            switchState('office');
+            createOverlay(attrs.stocksId, '#stock_overlay_template',
+                stockOverlayFill);
+        });
+    }
 };

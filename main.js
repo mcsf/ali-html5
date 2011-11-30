@@ -114,7 +114,7 @@ $(document).ready(function() {
         /* Generate Object and Stock lists */
         stocks.sort(objectCmp);
         $.each(stocks, function(i,v) {
-            v.id = i;
+            v.id = v.stocksId = i;
             v.stocks = true;
             createStockItem(v);
 

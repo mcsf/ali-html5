@@ -13,7 +13,7 @@
     width         : 640px;
     height        : 400px;
     background    : #0f0f0f;
-    opacity       : 0.85;
+    opacity       : 0.90;
     border-radius : 15px;
     box-shadow    : 10px 10px 5px #999;
 }
@@ -121,7 +121,18 @@ button {
 
 .overlay .b_order {
     right       : 5px;
+}
+
+.overlay .disabled,
+.overlay .b_order {
     opacity     : .3;
+}
+
+.overlay .b_stocks {
+    position : absolute;
+    top      : 339px;
+    left     : 308px;
+    color    : #0f0f0f;
 }
 
 .overlay > .na,
@@ -181,6 +192,7 @@ button {
     display        : table-cell;
     vertical-align : middle;
     margin         : 0px;
+    padding        : 2px;
 }
 
 .notifier.center {

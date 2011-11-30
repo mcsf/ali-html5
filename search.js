@@ -107,7 +107,7 @@ function incrSearchReset() {
     $("#itemlist > div").each(function() {
 
         var attrs = objects[$(this).find(".id").val()];
-        if (attrs.stocks) {
+        if (!stocksView && attrs.stocks) {
             $(this).hide();
             return;
         }

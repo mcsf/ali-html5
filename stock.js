@@ -150,11 +150,20 @@ function stockOverlayFill(o, id) {
     o.find(".b_locate").click(function() {
 	stockShowLocation(attrs);
     });
+    if (!attrs.locations || attrs.locations.length == 0) {
+        o.find(".b_locate").addClass("disabled");
+    }
+    o.find(".b_order").click(function() {
+        notify("Funcionalidade não implementada.");
+    });
 };
 
 
 function stockShowLocation(attrs) {
-    if (!attrs.locations || attrs.locations.length == 0) return;
+    if (!attrs.locations || attrs.locations.length == 0) {
+        notify('Este artigo está esgotado.');
+        return;
+    }
     stocksLocate = attrs.description;
     incrSearchUpdate();
     switchState("object");

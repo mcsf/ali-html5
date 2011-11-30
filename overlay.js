@@ -42,14 +42,15 @@ function deleteOverlayOnEscape(event) {
     if (event.which == 27) deleteOverlay(event);
 };
 
-function notify(msg) {
+function notify(msg, timer) {
+    if (!timer) timer = 1000;
     var o = $('<div class="notifier"><p></p></div>');
 
     $("#nav_and_body").append(o);
 
     if ($(".overlay").length > 0) o.addClass("right");
     o.find("p").text(msg);
-    o.css("visibility", "visible").show().fadeOut(1000);
+    o.css("visibility", "visible").show().fadeOut(timer);
 
-    setTimeout(function() { o.remove(); }, 5000);
+    setTimeout(function() { o.remove(); }, 2*timer);
 };
