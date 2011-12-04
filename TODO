@@ -32,7 +32,7 @@
 --- Extras
 - Cenário a seguir
 - Simular manipulação física dos objectos
-- Página de intro a avisar para requisitos do browser
++ Página de intro a avisar para requisitos do browser
 + Teclado virtual: ver o que se está a escrever
 @ User Agent String para detectar browsers incompatíveis
 @ Remover dummy tray se o browser for de iPad/iOS
