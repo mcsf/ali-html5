@@ -359,6 +359,10 @@ canvas {
     color : #880;
 }
 
+#stocklist > .stock .units:not(.urgent):not(.warning) {
+    color : #080;
+}
+
 #stocklist :nth-child(odd) {
     background: #d9dbe1;
 }

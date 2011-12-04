@@ -57,12 +57,16 @@
     margin-left : 43px;
 }
 
+.overlay > .units > span:not(.urgent):not(.warning) {
+    color : #080;
+}
+
 .overlay .urgent {
-    background : #800;
+    color : #800 !important;
 }
 
 .overlay .warning {
-    background : #880;
+    color : #880 !important;
 }
 
 .overlay > .categories {
@@ -70,7 +74,6 @@
 }
 
 .overlay button,
-.overlay > .units > span:not(.urgent):not(.warning),
 .overlay .category {
     background    : #0571dc;
 }
