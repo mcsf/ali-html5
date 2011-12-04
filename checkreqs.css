@@ -1,0 +1,29 @@
+body {
+    position         : relative;
+    width            : 50em;
+    color            : #70777f;
+    font-family      : "Helvetica";
+    margin-left      : 2em;
+    margin-top       : 2em;
+    text-align       : justify;
+}
+
+.highlight {
+    background-color : #eef;
+    color : #60666e;
+}
+
+#browser_info.ok {
+    background-color : #efe;
+}
+
+#browser_info.nope {
+    background-color : #fee;
+}
+
+.hidden *,
+.hidden {
+    /* display : none; */
+    background-color : transparent !important;
+    color : lightgray;
+}

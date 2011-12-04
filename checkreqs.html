@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <link rel="stylesheet" href="checkreqs.css" type="text/css">
+        <noscript>
+            <link rel="stylesheet" href="noscript.css" type="text/css">
+        </noscript>
+        <script type="text/javascript" src="lib/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="checkreqs.js"></script>
+        <title>ALI</title>
+    </head>
+
+    <body>
+
+        <noscript>
+            <h2>
+                Deve permitir a execução de JavaScript por parte do seu navegador.
+            </h2>
+        </noscript>
+
+        <div id="main">
+
+            <h2>Aviso sobre a implementação do ALI</h2>
+
+            <p>
+            O ALI é desenvolvido em HTML5, tirando partido dos últimos
+            avanços nas implementações da norma por parte daqueles fabricantes
+            de navegadores que estão empenhados em colaborar em prol de uma
+            Web aberta e acessível.
+            </p>
+
+            <p>
+            Dito isto, o uso do ALI requer um navegador muito recente.
+            Concretamente, ao longo do desenvolvimento, o protótipo foi
+            testado nas versões 7 e 8 do Mozilla Firefox, e nas últimas
+            distribuições do Chromium (15.0.*), o projecto <i>open source</i>
+            por trás do Google Chrome. Não foi feito qualquer tipo de teste
+            nem há garantias de que funcione correctamente no Microsoft
+            Internet Explorer, conhecido pelas suas idiossincrasias. Mais, nas
+            máquinas do Pavilhão de Informática III corre o Firefox 3.6.*, e
+            foi visto que o ALI não corre correctamente nele.
+            </p>
+
+            <p class="hidden highlight" id="browser_ok">
+            Segundo detectamos, o navegador que está a ser usado para ler esta
+            página é suportado. Ainda assim, pede-se ao avaliador que
+            verifique que os requisitos são cumpridos.
+            </p>
+
+            <p class="hidden highlight" id="browser_nope">
+            Segundo detectamos, o navegador que está a ser usado para ler esta
+            página <b>não</b> é suportado. Pede-se assim ao avaliador que
+            instale a última versão do
+
+            <a href="http://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a>.
+
+            Note-se que, em variantes de UNIX, não é preciso fazer uma
+            instalação real do navegador, bastando descomprir a pasta
+            descarregada e correr o executável do navegador localmente.
+            </p>
+
+            <p class="hidden highlight" id="browser_info">
+            </p>
+
+
+        </div>
+
+</body>
+</html>
