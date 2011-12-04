@@ -1,11 +1,9 @@
 function setNope() {
-    $("#browser_nope").removeClass("hidden");
-    $("#browser_info").addClass("nope");
+    $("#browser_nope").removeClass("hidden").addClass("nope");
 };
 
 function setOK() {
-    $("#browser_ok").removeClass("hidden");
-    $("#browser_info").addClass("ok");
+    $("#browser_ok").removeClass("hidden").addClass("ok");
 }
 
 function setInfo(s) {

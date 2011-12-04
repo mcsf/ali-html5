@@ -12,13 +12,14 @@ body {
     background-color : #eef;
     color : #60666e;
     padding : 0.5em;
+    border : 1px dotted #000080;
 }
 
-#browser_info.ok {
+.ok {
     background-color : #efe;
 }
 
-#browser_info.nope {
+.nope {
     background-color : #fee;
 }
 
@@ -26,5 +27,6 @@ body {
 .hidden {
     /* display : none; */
     background-color : transparent !important;
+    border : none;
     color : lightgray;
 }
