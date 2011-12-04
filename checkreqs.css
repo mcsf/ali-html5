@@ -11,6 +11,7 @@ body {
 .highlight {
     background-color : #eef;
     color : #60666e;
+    padding : 0.5em;
 }
 
 #browser_info.ok {
